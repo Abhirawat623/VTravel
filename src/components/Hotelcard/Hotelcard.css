@@ -1,0 +1,22 @@
+.hotel-container{
+   height: 45vh;
+   width: 50vh;
+   padding: 3px;
+   box-shadow: 1px 1px 2px 2px var(--shadow);
+}
+
+.hotel-image-container{
+    height: 60%;
+  width: 100%;
+}
+.hotel-image{
+    height: 100%;
+    width: 100%;
+}
+
+.star{
+    display: flex;
+    gap: none;
+    align-items: center;
+    
+}
