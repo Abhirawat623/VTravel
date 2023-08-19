@@ -1,0 +1,28 @@
+
+
+.nav-logo {
+  height: 50%;
+  width: 132px;
+  padding: 3px;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+  
+}
+
+.form-container {
+  border: 1px solid white;
+  padding: 10px;
+  box-shadow: 1px 1px 3px 3px var(--shadow);
+}
+
+.form-icons {
+  border-right: 2px solid var(--shadow);
+
+  padding-right: 7px;
+}
+
+.navbar-items{
+  padding: 8px;
+  text-decoration: none;
+  list-style: none;
+}
