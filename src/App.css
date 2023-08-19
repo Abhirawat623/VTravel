@@ -19,13 +19,16 @@
  
 }
 
+.wrap{
+   flex-wrap: wrap;
+}
 .cursor-pointer {
   cursor: pointer;
 }
 
 body {
   background-color: var(--primary-color);
-  overflow-y: hidden;
+
   overflow-x: hidden;
 }
 

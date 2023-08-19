@@ -1,22 +1,24 @@
-.hotel-container{
-   height: 45vh;
-   width: 50vh;
-   padding: 3px;
-   box-shadow: 1px 1px 2px 2px var(--shadow);
+.hotel-container {
+  height: 45vh;
+  width: 50vh;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 2px var(--shadow);
 }
 
-.hotel-image-container{
-    height: 60%;
+.hotel-image-container {
+  height: 70%;
+
   width: 100%;
 }
-.hotel-image{
-    height: 100%;
-    width: 100%;
+.hotel-image {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
 }
 
-.star{
-    display: flex;
-    gap: none;
-    align-items: center;
-    
+.star {
+  display: flex;
+  gap: none;
+  align-items: center;
 }
