@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Carousel from '@itseasy21/react-elastic-carousel'
-
+import { useCategory } from "../../context/index";
 export const Categories = () => {
     const [categories, setCategories] = useState([]);
+    //for categories
+    const { hotelCategory, setHotelCategory}=useCategory();
     //   const [numberOfCategories, setNumberOfCategories] = useState(0);
 
     //   const handleLeftButton = () => {
@@ -35,6 +37,11 @@ export const Categories = () => {
         })();
     }, []);
 
+  const handleCategoryClick=(category)=>{
+  setHotelCategory(category);
+  }
+
+
     return (
         <div className="categories-container  ">
 
@@ -47,7 +54,7 @@ export const Categories = () => {
             <Carousel className="carousel" itemsToShow={8} itemPadding={[10, 50]} itemsToScroll={8} pagination={false} autoPlaySpeed={2500}>
                 {categories &&
                     categories.map(({ _id, category }) => (
-                        <button className="categories">{category}</button>
+                        <button className="categories" key={_id} onClick={()=>handleCategoryClick(category)}>{category}</button>
                     ))}
             </Carousel>
             {/*     

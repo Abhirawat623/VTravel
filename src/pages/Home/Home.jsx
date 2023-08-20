@@ -2,26 +2,32 @@ import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
 import { Navbar, HotelCard,Categories} from "../../components/index";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useCategory } from "../../context/index";
 
 export const Home = () => {
+  //for Infinite Scrolls
   const [hotels, setHotels] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(12);
   const [testData, setTestData] = useState([]);
-
+//for categories 
+const{hotelCategory}= useCategory();
+console.log(hotelCategory)
   useEffect(() => {
     (async () => {
       try {
         const { data } = await axios.get(
-          "https://sore-blue-duckling-garb.cyclic.cloud/api/hotels"
+          hotelCategory?
+          `https://sore-blue-duckling-garb.cyclic.cloud/api/hotels?category=${hotelCategory}`:"https://sore-blue-duckling-garb.cyclic.cloud/api/hotels"
         );
         setTestData(data);
+        console.log(testData)
         setHotels(data ? data.slice(0, 12) : []);
       } catch (err) {
         console.log(err);
       }
     })();
-  }, []);
+  }, [hotelCategory]);
 
   const fetchMoreHotels = () => {
     if (hotels.length >= testData.length) {
