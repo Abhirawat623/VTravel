@@ -1,6 +1,7 @@
 @import url("./components//Navbar/Navbar.css");
 @import url("./components/Hotelcard//Hotelcard.css");
 @import url("./pages//Home/Home.css");
+@import url('./components/categories//Categories.css');
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");

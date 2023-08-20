@@ -9,17 +9,17 @@ export const HotelCard = ({ items }) => {
       </div>
       <div className="hotel-description">
         <div className="d-flex dir-col ">
-          <span>
+          <span className="address">
             {address},{state}
           </span>
-          <span>{name}</span>
+          <span className="hotel-name">{name}</span>
         </div>
       </div>
-      <div className="hotel-footer d-flex  space-between">
-        <span>Rs.{price}/Night</span>
-        <div className="star">
+      <div className="hotel-footer">
+        <div className="hotel-price"><span className="color-price">Rs.{price}</span>/Night</div>
+        <div className="star  ">
           <span className="material-icons-outlined">star</span>
-          <span>{rating}</span>
+          <span className="star-rating">{rating}</span>
         </div>
       </div>
     </div>

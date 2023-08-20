@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
-import { Navbar, HotelCard } from "../../components/index";
+import { Navbar, HotelCard,Categories} from "../../components/index";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export const Home = () => {
@@ -43,6 +43,7 @@ export const Home = () => {
   return (
     <Fragment>
       <Navbar />
+      <Categories/>
       {hotels && hotels.length > 0 ? (
         <InfiniteScroll
           dataLength={hotels.length}
@@ -57,7 +58,7 @@ export const Home = () => {
           }
           endMessage={<p className="last-message">You have reached to the Last section &#x1F304; &#9749; </p>}
         >
-          <main className="hotelcard-container gap-m">
+          <main className="hotelcard-container">
             {hotels &&
               hotels.map((hotel) => (
                 <HotelCard key={hotel._id} items={hotel} />

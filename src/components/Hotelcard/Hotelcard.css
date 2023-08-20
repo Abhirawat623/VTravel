@@ -1,24 +1,73 @@
 .hotel-container {
-  height: 45vh;
-  width: 50vh;
-  border: none;
+  height: 49vh;
+  width: 46vh;
+
   border-radius: 5px;
-  box-shadow: 1px 1px 2px 2px var(--shadow);
+  box-shadow: 2px 2px 4px 3px var(--shadow);
+  position: relative;
+
 }
 
 .hotel-image-container {
-  height: 70%;
+  height: 65%;
 
   width: 100%;
 }
+
 .hotel-image {
   height: 100%;
   width: 100%;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .star {
   display: flex;
   gap: none;
   align-items: center;
+  gap: 2px;
+}
+
+.hotel-price {
+  position: absolute;
+  bottom: 2px;
+  left: 5px;
+  font-style: bold;
+
+}
+
+
+.star {
+  position: absolute;
+  top: 56%;
+  right: 0;
+  border: 1px solid var(--shadow);
+  border-right: none;
+  width: 4rem;
+  border-radius: 6px 0 0 6px;
+  background-color: var(--primary-color);
+  color: goldenrod;
+
+}
+
+.hotel-description {
+  padding: 5px;
+
+}
+
+.address {
+  font-weight: bolder;
+
+}
+
+.hotel-name {
+  color: rgba(37, 36, 36, 0.733);
+}
+
+.star-rating {
+  color: black;
+}
+
+.color-price {
+  font-weight: bolder;
 }
