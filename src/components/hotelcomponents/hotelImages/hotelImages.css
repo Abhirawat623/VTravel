@@ -1,16 +1,23 @@
-.hotelImage-container{
-   display: flex;
-   flex-direction: row;
-   gap:5px;
-  padding:4rem;
+.hotelImage-container {
+  display: flex;
+  justify-content: center;
 }
 
-.primary-image{
-    width: 90%;
+.hotel-image-primary {
+  padding: 0.5rem;
 }
-.grid-images{
-   display: grid;
-   grid-template-rows:auto auto auto auto;
-
+.grid-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.5rem;
+  gap: 6px;
 }
-
+.primary-image {
+  height: 100%;
+  max-width: 50vh;
+}
+.secondary-image {
+  max-height: 30vh;
+  object-fit: cover;
+  width: 55vh;
+}

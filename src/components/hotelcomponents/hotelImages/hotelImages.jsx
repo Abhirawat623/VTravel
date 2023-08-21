@@ -9,7 +9,7 @@ export const HotelImages = ({ items }) => {
       {imageArr &&
         imageArr.map((image) => (
          
-            <img className="secondary-image" src={image} key={image} alt="image" />
+            <img className="secondary-image" src={image} key={image} alt="No Image To Load" />
          
         ))}
          </div>

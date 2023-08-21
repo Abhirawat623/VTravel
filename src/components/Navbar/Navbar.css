@@ -5,8 +5,6 @@
   width: 132px;
   padding: 5px;
   margin-left: 1rem;
- 
-
   border-radius: 5px;
   
 }
@@ -27,4 +25,11 @@
   padding: 8px;
   text-decoration: none;
   list-style: none;
+}
+
+.searcher{
+  background-color: var(--accent-color);
+  padding: 5px;
+  color: white;
+  border-radius: 50px;
 }
