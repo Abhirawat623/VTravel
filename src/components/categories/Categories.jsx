@@ -40,8 +40,6 @@ export const Categories = () => {
   const handleCategoryClick=(category)=>{
   setHotelCategory(category);
   }
-
-console.log(hotelCategory)
     return (
         <div className="categories-container ">
 

@@ -4,10 +4,8 @@ export const Navbar = () => {
       <div className="container-fluid d-flex dir-row gap-l">
         <img
           className="nav-logo cursor-pointer"
-          src="../assets/nav-logo.png"
+          src={"https://i.ibb.co/2j4tDdc/nav-logo-removebg-preview.png"}
           alt="navlogo"
-          href="#"
-
         />
 
         <div className="form-container d-flex dir-column align-center gap-l cursor-pointer">
@@ -22,7 +20,9 @@ export const Navbar = () => {
             <span class="material-icons-outlined cursor-pointer">person</span>
           </li>
           <li className="nav-icon">
-            <span class="material-icons-outlined cursor-pointer ">drag_indicator</span>
+            <span class="material-icons-outlined cursor-pointer ">
+              drag_indicator
+            </span>
           </li>
         </ul>
       </div>

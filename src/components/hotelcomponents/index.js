@@ -1,0 +1,1 @@
+export {HotelImages} from './hotelImages/hotelImages'

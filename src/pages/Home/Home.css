@@ -1,7 +1,7 @@
 .hotelcard-container {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  padding: 1rem 2rem 2rem 3rem;
+  padding: 2rem 4rem 2rem 3rem;
   gap: 2rem;
 }
 

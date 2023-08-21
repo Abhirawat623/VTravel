@@ -12,7 +12,6 @@ export const Home = () => {
   const [testData, setTestData] = useState([]);
   //for categories
   const { hotelCategory } = useCategory();
-  console.log(hotelCategory);
   useEffect(() => {
     (async () => {
       try {
@@ -27,8 +26,6 @@ export const Home = () => {
       }
     })();
   }, [hotelCategory]);
-  console.log("ww", hotelCategory);
-
   const fetchMoreHotels = () => {
     if (hotels.length >= testData.length) {
       setHasMore(false);

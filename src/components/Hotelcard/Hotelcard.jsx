@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 export const HotelCard = ({ items }) => {
-  console.log(items);
+  
   const { _id, name, image, address, state, rating, price } = items;
   //for navigate
   const navigate = useNavigate();
