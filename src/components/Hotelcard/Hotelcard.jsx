@@ -1,9 +1,19 @@
+import { useNavigate } from "react-router-dom";
+
 export const HotelCard = ({ items }) => {
   console.log(items);
-  const { name, image, address, state, rating, price } = items;
+  const { _id, name, image, address, state, rating, price } = items;
+  //for navigate
+  const navigate = useNavigate();
+  const handleClickedHotel = () => {
+    navigate(`/hotels/${name}/${address}-${state}/${_id}/reserve`);
+  };
 
   return (
-    <div className="hotel-container d-flex dir-col">
+    <div
+      className="hotel-container d-flex dir-col"
+      onClick={handleClickedHotel}
+    >
       <div className="hotel-image-container">
         <img src={image} alt={name} className="hotel-image" />
       </div>
@@ -16,7 +26,9 @@ export const HotelCard = ({ items }) => {
         </div>
       </div>
       <div className="hotel-footer">
-        <div className="hotel-price"><span className="color-price">Rs.{price}</span>/Night</div>
+        <div className="hotel-price">
+          <span className="color-price">Rs.{price}</span>/Night
+        </div>
         <div className="star  ">
           <span className="material-icons-outlined">star</span>
           <span className="star-rating">{rating}</span>

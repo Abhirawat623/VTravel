@@ -54,7 +54,7 @@ console.log(hotelCategory)
             <Carousel className="carousel" itemsToShow={8} itemPadding={[10, 50]} itemsToScroll={8} pagination={false} autoPlaySpeed={2500}>
                 {categories &&
                     categories.map(({ _id,category }) => (
-                        <button className="categories" key={_id} onClick={()=>handleCategoryClick(category)}>{category}</button>
+                        <button className={`${category===hotelCategory?'selected-category':''} categories`} key={_id} onClick={()=>handleCategoryClick(category)}>{category}</button>
                     ))}
             </Carousel>
             {/*     

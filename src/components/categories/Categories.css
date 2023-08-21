@@ -28,7 +28,12 @@
     box-shadow: inset 0 0 1px 1px var(--shadow);
 }
 
-.categories {
+.categories{
     border: none;
     background-color: transparent;
+}
+.selected-category{
+    border-bottom: 2px solid var(--shadow);
+    scale:1.11;
+    transition: 200ms;
 }

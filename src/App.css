@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("./pages/SingleHotel/SingleHotel.css");
 
 :root {
   --primary-color: #f8faf3;

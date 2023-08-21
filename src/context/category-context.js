@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-const initialValue ="Tiny Homes";
+const initialValue ="National Parks";
 
 
 const CategoryContext = createContext(initialValue);
