@@ -1,13 +1,14 @@
 import { createContext, useContext, useState } from "react";
-const initialValue = "National Parks";
+const initialValue ="Tiny Homes";
+
 
 const CategoryContext = createContext(initialValue);
 
 const CategoryProvider = ({ children }) => {
-  const [hotelCategory, setHotelCategory] = useState();
+  const [hotelCategory,setHotelCategory] = useState(initialValue);
 
   return (
-    <CategoryContext.Provider value={{ hotelCategory, setHotelCategory }}>
+    <CategoryContext.Provider value={{ hotelCategory,setHotelCategory}}>
       {children}
     </CategoryContext.Provider>
   );

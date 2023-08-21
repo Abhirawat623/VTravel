@@ -5,7 +5,7 @@ import { useCategory } from "../../context/index";
 export const Categories = () => {
     const [categories, setCategories] = useState([]);
     //for categories
-    const { hotelCategory, setHotelCategory}=useCategory();
+    const { hotelCategory,setHotelCategory} =useCategory();
     //   const [numberOfCategories, setNumberOfCategories] = useState(0);
 
     //   const handleLeftButton = () => {
@@ -20,7 +20,7 @@ export const Categories = () => {
         (async () => {
             try {
                 const { data } = await axios.get(
-                    "https://sore-blue-duckling-garb.cyclic.cloud/api/categories"
+                    "https://real-teal-basket-clam-wear.cyclic.cloud/api/categories"
                 );
                 // const categoriesToShow = data.slice(
                 //   numberOfCategories + 8 > data.length
@@ -41,9 +41,9 @@ export const Categories = () => {
   setHotelCategory(category);
   }
 
-
+console.log(hotelCategory)
     return (
-        <div className="categories-container  ">
+        <div className="categories-container ">
 
 
             {/* { numberOfCategories >= 8 &&
@@ -53,7 +53,7 @@ export const Categories = () => {
 } */}
             <Carousel className="carousel" itemsToShow={8} itemPadding={[10, 50]} itemsToScroll={8} pagination={false} autoPlaySpeed={2500}>
                 {categories &&
-                    categories.map(({ _id, category }) => (
+                    categories.map(({ _id,category }) => (
                         <button className="categories" key={_id} onClick={()=>handleCategoryClick(category)}>{category}</button>
                     ))}
             </Carousel>

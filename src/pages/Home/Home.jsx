@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
-import { Navbar, HotelCard,Categories} from "../../components/index";
+import { Navbar, HotelCard, Categories } from "../../components/index";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useCategory } from "../../context/index";
 
@@ -10,24 +10,24 @@ export const Home = () => {
   const [hasMore, setHasMore] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(12);
   const [testData, setTestData] = useState([]);
-//for categories 
-const{hotelCategory}= useCategory();
-console.log(hotelCategory)
+  //for categories
+  const { hotelCategory } = useCategory();
+  console.log(hotelCategory);
   useEffect(() => {
     (async () => {
       try {
         const { data } = await axios.get(
-          hotelCategory?
-          `https://sore-blue-duckling-garb.cyclic.cloud/api/hotels?category=${hotelCategory}`:"https://sore-blue-duckling-garb.cyclic.cloud/api/hotels"
+          `https://real-teal-basket-clam-wear.cyclic.cloud/api/hotels?category=${hotelCategory}`
         );
         setTestData(data);
-        console.log(testData)
+        console.log(hotels);
         setHotels(data ? data.slice(0, 12) : []);
       } catch (err) {
         console.log(err);
       }
     })();
   }, [hotelCategory]);
+  console.log("ww", hotelCategory);
 
   const fetchMoreHotels = () => {
     if (hotels.length >= testData.length) {
@@ -49,20 +49,18 @@ console.log(hotelCategory)
   return (
     <Fragment>
       <Navbar />
-      <Categories/>
+      <Categories />
       {hotels && hotels.length > 0 ? (
         <InfiniteScroll
           dataLength={hotels.length}
           next={fetchMoreHotels}
           hasMore={hasMore}
-          loader={
-            hotels.length > 0 && (
-              <span class="loader">
-               Loading....
-              </span>
-            )
+          loader={hotels.length > 0 && <span class="loader">Loading....</span>}
+          endMessage={
+            <p className="last-message">
+              You have reached to the Last section &#x1F304; &#9749;{" "}
+            </p>
           }
-          endMessage={<p className="last-message">You have reached to the Last section &#x1F304; &#9749; </p>}
         >
           <main className="hotelcard-container">
             {hotels &&
