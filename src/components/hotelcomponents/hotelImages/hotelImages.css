@@ -1,0 +1,16 @@
+.hotelImage-container{
+   display: flex;
+   flex-direction: row;
+   gap:5px;
+  padding:4rem;
+}
+
+.primary-image{
+    width: 90%;
+}
+.grid-images{
+   display: grid;
+   grid-template-rows:auto auto auto auto;
+
+}
+

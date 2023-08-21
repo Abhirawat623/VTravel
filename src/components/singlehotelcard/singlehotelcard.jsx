@@ -13,7 +13,7 @@ export const SingleHotelCard = () => {
   useEffect(() => {
     (async () => {
       try {
-        const data = await axios.get(
+        const {data} = await axios.get(
           `https://real-teal-basket-clam-wear.cyclic.cloud/api/hotels/${id}`
         );
         
@@ -27,5 +27,5 @@ export const SingleHotelCard = () => {
     })();
   }, [id]);
 
-  return <HotelImages singleHotel={singleHotel} />;
+  return <HotelImages items={singleHotel} />;
 };
