@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
 export const HotelCard = ({ items }) => {
-  
   const { _id, name, image, address, state, rating, price } = items;
   //for navigate
   const navigate = useNavigate();
@@ -29,7 +28,10 @@ export const HotelCard = ({ items }) => {
         <div className="hotel-price">
           <span className="color-price">Rs.{price}</span>/Night
         </div>
-        <div className="star  ">
+        <div className="wishlist-icon ">
+          <span class="material-icons-outlined ">favorite</span>
+        </div>
+        <div className="star ">
           <span className="material-icons-outlined">star</span>
           <span className="star-rating">{rating}</span>
         </div>

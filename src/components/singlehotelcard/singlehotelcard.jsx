@@ -46,7 +46,7 @@ export const SingleHotelCard = () => {
             <span className="single-hotel-star-rating">{rating}</span>
           </div>
           <div className="single-hotel-address">
-            {address},{city},{state},{country}
+            {address}, {city}, {state}, {country}
           </div>
         </div>
       </div>

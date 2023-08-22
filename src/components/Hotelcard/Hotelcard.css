@@ -71,3 +71,10 @@
 .color-price {
   font-weight: bolder;
 }
+
+.wishlist-icon{
+  color: white;
+  position: absolute;
+  top:1rem;
+  right: 5px;
+}

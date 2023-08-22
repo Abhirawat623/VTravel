@@ -2,21 +2,23 @@ import "./Footer.css";
 
 export const Footer = () => {
     return (
-      <footer class="footer d-flex direction-column align-center">
+      <footer class="footer d-flex dir-col align-center">
         <p>
        Made by Abhishek Rawat
         </p>
-        <div class="d-flex gap align-center padding-all-16">
+        <div class="d-flex gap align-center gap-s">
           <a
             href="https://github.com/Abhirawat623"
             class="link"
             target="_blank"
             rel="noreferrer"
+            
           >
             <img
               class="source-image"
               src="https://therightfit.netlify.app/assets/github-logo.png"
               alt="GitHub"
+              className="icons-image"
             />
           </a>
           <a
@@ -29,6 +31,7 @@ export const Footer = () => {
               class="source-image"
               src="https://therightfit.netlify.app/assets/twitter.png"
               alt="Twitter"
+              className="icons-image"
             />
           </a>
           <a
@@ -41,6 +44,7 @@ export const Footer = () => {
               class="source-image"
               src="https://therightfit.netlify.app/assets/linkedin.png"
               alt="LinkedIn"
+              className="icons-image"
             />
           </a>
         </div>

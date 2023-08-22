@@ -13,11 +13,11 @@ export const HotelDescription = ({ items }) => {
         beds. {numberOfBathrooms} bathrooms.
       </div>
       <div className="d-flex dir-row space-between text-s">
-        <div className=" smile-rebook d-flex align-center gap=m">
+        <div className=" smile-rebook d-flex align-center ">
           <span class="material-icons-outlined ">emoji_emotions</span>
           <span className="white-color">90% Rebooking</span>
         </div>
-        <div className="house-emoji d-flex align-center gap=m">
+        <div className="house-emoji d-flex align-center ">
           <span class=" material-icons-outlined">night_shelter</span>
          <span className="white-color">{propertyType}</span> 
         </div>
