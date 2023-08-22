@@ -15,9 +15,11 @@
 .primary-image {
   height: 100%;
   max-width: 50vh;
+  border-radius: 10px;
 }
 .secondary-image {
   max-height: 30vh;
   object-fit: cover;
   width: 55vh;
+  border-radius: 10px;
 }
