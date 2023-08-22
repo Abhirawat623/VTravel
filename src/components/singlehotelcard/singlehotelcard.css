@@ -4,7 +4,6 @@
   border: 1px solid var(--shadow);
   border-radius: 5px;
   padding: 12px;
-
   background-color: var(--accent-color);
 }
 
@@ -25,7 +24,7 @@
   display: flex;
   gap: 2rem;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
 }
 
 .single-hotel-header {
@@ -41,21 +40,28 @@
   align-items: center;
   margin: 1.5rem;
 }
-.joined-on{
-    color:var(--shadow);
+.joined-on {
+  color: var(--shadow);
 }
-.joined-date{
-    color: var(--accent-color);
-    font-family: initial;
+.joined-date {
+  color: var(--accent-color);
+  font-family: initial;
 }
-.host-name{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 500;
+.host-name {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
 }
 
-.host-details{
+.host-details {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.single-hotel-mid-section{
     display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-direction: row;
+ justify-content: center;
+ gap:3rem;
+   flex-direction: row;
 }

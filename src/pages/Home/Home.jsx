@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
-import { Navbar, HotelCard, Categories } from "../../components/index";
+import { Navbar, HotelCard, Categories,Footer } from "../../components/index";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useCategory } from "../../context/index";
 
@@ -69,6 +69,7 @@ export const Home = () => {
       ) : (
         <></>
       )}
+      <Footer/>
     </Fragment>
   );
 };

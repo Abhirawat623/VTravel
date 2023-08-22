@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import { Navbar,SingleHotelCard } from "../../components/index"
+import { Navbar,SingleHotelCard ,Footer} from "../../components/index"
 
 
 
@@ -8,6 +8,7 @@ export const SingleHotel =()=>{
         <Fragment>
             <Navbar/>
             <SingleHotelCard/>
+            <Footer/>
         </Fragment>
     )
 }

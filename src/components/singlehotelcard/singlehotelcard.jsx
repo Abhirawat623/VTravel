@@ -37,8 +37,7 @@ export const SingleHotelCard = () => {
     hostJoinedOn,
   } = singleHotel;
 
-  return (
-    <div className="single-hotel-components">
+  return (<>    <div className="single-hotel-components">
       <div className="single-hotel-header">
         <h2 className="single-hotel-name">{name}</h2>
         <div className="rate-address text-l">
@@ -63,9 +62,16 @@ export const SingleHotelCard = () => {
           Joined on <span className="joined-date">{hostJoinedOn}</span>
         </h5>
       </div>
-      <div>
-        <HotelDescription items={singleHotel} />
-      </div>
+   
     </div>
+    <div className="single-hotel-mid-section">
+      <div> <HotelDescription items={singleHotel}/></div>
+      <div> <HotelDescription items={singleHotel}/></div>
+    
+    </div>
+   
+   
+    </>
+
   );
 };

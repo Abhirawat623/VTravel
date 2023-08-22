@@ -1,0 +1,11 @@
+.footer {
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: var(--text-color-secondary);
+    
+}
+  
+.padding-all-16 {
+    padding: 0;
+    padding-top: 8px;
+}
