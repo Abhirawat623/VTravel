@@ -10,6 +10,7 @@ export const Home = () => {
   const [hasMore, setHasMore] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(12);
   const [testData, setTestData] = useState([]);
+
   //for categories
   const { hotelCategory } = useCategory();
   useEffect(() => {
@@ -46,7 +47,7 @@ export const Home = () => {
   return (
     <Fragment>
       <Navbar />
-      <Categories />
+          <Categories />
       {hotels && hotels.length > 0 ? (
         <InfiniteScroll
           dataLength={hotels.length}

@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import {SearchByDate} from '../index';
 export const Navbar = () => {
-  return (
-    <nav className="navbar  ">
+
+  //for date searcher
+  const [searchByDate,setSearchByDate]=useState(false)
+   const handleFormClicked=()=>{
+    setSearchByDate(true);
+   }
+  return (<>
+    <nav className="navbar ">
       <div className="container-fluid d-flex dir-row gap-l">
        <Link to='/'><img
           className="nav-logo cursor-pointer"
@@ -9,7 +17,8 @@ export const Navbar = () => {
           alt="navlogo"
         /></Link> 
 
-        <div className="form-container d-flex dir-column align-center gap-l cursor-pointer">
+        <div className="form-container d-flex dir-column align-center gap-l cursor-pointer"
+        onClick={handleFormClicked}>
           <span className="form-icons text-bold">Where To Book</span>
           <span className="form-icons text-bold">When To Visit</span>
           <span className="form-icons">Add Guests</span>
@@ -28,5 +37,9 @@ export const Navbar = () => {
         </ul>
       </div>
     </nav>
+    {
+        searchByDate && <SearchByDate/>
+            }     
+    </>
   );
 };
