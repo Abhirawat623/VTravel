@@ -50,6 +50,33 @@
   right: -3rem;
 }
 
+.location-list-container{
+
+  background-color: white;
+  border: 1px solid var(--shadow);
+  padding: 1px;
+  color:black;
+  width: 25rem;
+  max-height: 50vh;
+  overflow-y: auto;
+  border-radius: 5px;
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  z-index: 5;
+  font-size: 1.1rem;
+
+
+}
+
+.location-elements:hover{
+  background-color: var(--shadow);
+  color:black;
+  border-radius: 5px;
+  font-size: 1.11rem;
+  
+}
+
 ::-webkit-input-placeholder {
   /* Edge */
   color: rgb(255, 255, 255);
