@@ -1,6 +1,6 @@
 export const dateReducer = (state, { type, payload }) => {
   switch (type) {
-    case "Open_search_modal":
+    case "OPEN_SEARCH_MODAL":
       return {
         ...state,
         isSearchModalOpen: !state.isSearchModalOpen,
@@ -14,6 +14,16 @@ export const dateReducer = (state, { type, payload }) => {
         ...state,
         dateCheckOut: payload,
       };
+      case "LOCATION":
+        return{
+            ...state,
+            location: payload
+        }
+        case "GUESTS":
+            return{
+                ...state,
+                guests: payload
+            }
     default:
       return state;
   }

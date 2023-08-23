@@ -6,7 +6,7 @@ const {dateDispatch} =useDate();
 
   const handleSearchClicked = () => {
    dateDispatch({
-    type:"Open_search_modal"
+    type:"OPEN_SEARCH_MODAL"
    })
   };
   return (
