@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding: 5px;
+    z-index: 1;
 }
 
 .carousel {
