@@ -7,7 +7,7 @@ import { useCategory ,useDate} from "../../context/index";
 export const Home = () => {
 
   //for date search
-  const {isSearchModalOpen,dateDispatch} =useDate();
+  const {isSearchModalOpen} =useDate();
 
 
   //for Infinite Scrolls
@@ -61,7 +61,7 @@ export const Home = () => {
           dataLength={hotels.length}
           next={fetchMoreHotels}
           hasMore={hasMore}
-          loader={hotels.length > 0 && <span class="loader">Loading....</span>}
+          loader={hotels.length > 10 && <span className="loader">Loading....</span>}
           endMessage={
             <p className="last-message">
               You have reached to the Last section &#x1F304; &#9749;{" "}

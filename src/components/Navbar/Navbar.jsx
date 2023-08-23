@@ -33,10 +33,10 @@ const {dateDispatch} =useDate();
 
           <ul className="navbar-items  d-flex dir-row ">
             <li className="nav-icon">
-              <span class="material-icons-outlined cursor-pointer">person</span>
+              <span className="material-icons-outlined cursor-pointer">person</span>
             </li>
             <li className="nav-icon">
-              <span class="material-icons-outlined cursor-pointer ">
+              <span className="material-icons-outlined cursor-pointer ">
                 drag_indicator
               </span>
             </li>
