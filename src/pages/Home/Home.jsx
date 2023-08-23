@@ -7,7 +7,7 @@ import { useCategory ,useDate} from "../../context/index";
 export const Home = () => {
 
   //for date search
-  const {isSearchModalOpen} =useDate();
+  const {isSearchModalOpen,dateDispatch} =useDate();
 
 
   //for Infinite Scrolls
@@ -49,8 +49,10 @@ export const Home = () => {
     }, 700);
   };
 
+
   return (
     <Fragment>
+      <div className="bg-all" >
       <Navbar />
       {isSearchModalOpen && <SearchByDate/>}
           <Categories />
@@ -79,6 +81,7 @@ export const Home = () => {
    
 
       <Footer/>
+      </div>
     </Fragment>
   );
 };

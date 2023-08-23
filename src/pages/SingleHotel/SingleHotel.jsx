@@ -1,17 +1,17 @@
 import { Fragment } from "react"
 import { Navbar,SingleHotelCard ,Footer,SearchByDate} from "../../components/index"
-import { useDate } from "../../context/index"
-
+import { useDate} from "../../context/index";
 
 
 export const SingleHotel =()=>{
-    const isSearchModalOpen= useDate();
+  //for date search
+  const {isSearchModalOpen,dateDispatch} =useDate();
     return(
-        <Fragment>
-               {isSearchModalOpen && <SearchByDate/>}
+        <Fragment>  
             <Navbar/>
             <SingleHotelCard/>
             <Footer/>
+            {isSearchModalOpen && <SearchByDate/>}
         </Fragment>
     )
 }

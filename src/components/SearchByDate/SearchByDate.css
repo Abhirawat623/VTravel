@@ -1,34 +1,48 @@
-.searcher-date-options{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    color: white;
-    background-color: var(--accent-color);
-    border:2px solid var(--shadow);
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-    position: fixed;
-    z-index: 5;
-    top: 10px;
-    left: 10rem;
-  }
-
-
-.searcher-date-option{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   
+.searcher-date-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  color: white;
+  background-color: var(--accent-color);
+  border: 2px solid var(--shadow);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  position: fixed;
+  z-index: 5;
+  top: 10px;
+  left: 10rem;
 }
-.search-date-input{
-    background: transparent;
-    border:none;
+
+.searcher-date-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-date-input {
+  background: transparent;
+  border: none;
   text-align: center;
 }
-.search-date-input:focus{
-    outline: none;
+.search-date-input:focus {
+  outline: none;
+}
+.close-searcher-date {
+  position: fixed;
+  z-index: 5;
+  top: 25px;
+  right: 10rem;
+  border: 2px solid var(--shadow);
+  background-color: red;
+  color: white;
+  text-align: center;
+  font-weight: bolder;
+  padding: 2px;
+  border-radius: 25px;
+  scale: 1.2;
+  height: 30px;
+  width: 30px;
 }
