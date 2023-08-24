@@ -23,7 +23,7 @@ const {dateDispatch} =useDate();
 
           <div
             className="form-container d-flex dir-column align-center gap-l cursor-pointer"
-            onClick={handleSearchClicked}
+            onClick={handleSearchClicked} 
           >
             <span className="form-icons text-bold">Where To Book</span>
             <span className="form-icons text-bold">When To Visit</span>

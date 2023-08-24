@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export const DateSelector = ({ checkInType}) => {
   // const [currentDate, setCurrentDate]=useState( new Date());
-  const { dateCheckIn, dateCheckOut, dateDispatch } = useDate();
+  const { dateCheckIn, dateCheckOut, dateDispatch,islocationListOpen } = useDate();
 
   const handleDateCHange = (date) => {
     dateDispatch({
@@ -16,7 +16,15 @@ export const DateSelector = ({ checkInType}) => {
     });
   };
 
-  console.log({dateCheckIn, dateCheckOut})
+  // console.log({dateCheckIn, dateCheckOut})
+
+  const handleLocatioListClose=()=>{
+  dateDispatch({
+    type:"ClOSE_LOCATION_LIST",
+    payload:islocationListOpen
+  })
+  }
+
 
   return (
     <DatePicker
@@ -25,6 +33,8 @@ export const DateSelector = ({ checkInType}) => {
       dateFormat="dd/MM/yyyy"
       closeOnScroll={true}
       placeholderText=" Select Date"
+      onFocus={handleLocatioListClose}
+     
       
     />
   );

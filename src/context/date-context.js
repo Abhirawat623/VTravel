@@ -6,16 +6,17 @@ const initialValue = {
   dateCheckIn: null,
   dateCheckOut: null,
   location:"",
-  guests:0
+  guests:0,
+  islocationListOpen:false
 };
 const DateContext = createContext(initialValue);
 
 const DateProvider = ({ children }) => {
-  const [{ isSearchModalOpen,location,guests, dateCheckIn, dateCheckOut }, dateDispatch] =
+  const [{ isSearchModalOpen,location,guests, dateCheckIn, dateCheckOut,islocationListOpen }, dateDispatch] =
     useReducer(dateReducer, initialValue);
   return (
     <DateContext.Provider
-      value={{ isSearchModalOpen, dateCheckIn, dateCheckOut,location,guests, dateDispatch }}
+      value={{ isSearchModalOpen, dateCheckIn, dateCheckOut,location,guests,islocationListOpen,dateDispatch }}
     >
       {children}
     </DateContext.Provider>

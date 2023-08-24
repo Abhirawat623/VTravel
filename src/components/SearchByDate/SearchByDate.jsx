@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDate, useCategory } from "../../context/index";
 import axios from "axios";
 export const SearchByDate = () => {
-  const { dateDispatch, location, guests } = useDate();
+  const { dateDispatch, location, guests, islocationListOpen } = useDate();
   const { hotelCategory } = useCategory();
   //for link
   const [hotels, setHotels] = useState([]);
@@ -53,6 +53,23 @@ export const SearchByDate = () => {
   );
 
   console.log(locationList);
+  //location click
+
+  const handlelocationResultClick = (address) => {
+    dateDispatch({
+      type: "LOCATION",
+      payload: address,
+    });
+  };
+
+  //focus of search-date bar
+
+  const handleLocationListOpen = () => {
+    dateDispatch({
+      type: "OPEN_LOCATION_LIST",
+      payload: islocationListOpen,
+    });
+  };
 
   return (
     <div className="searcher-date-container">
@@ -64,6 +81,9 @@ export const SearchByDate = () => {
             className="input search-date-input cursor-pointer"
             placeholder="Search Location "
             onChange={handleLocationChange}
+            value={location}
+            onFocus={handleLocationListOpen}
+            autoFocus
           />
         </div>
         {/* check in-out */}
@@ -84,6 +104,7 @@ export const SearchByDate = () => {
             placeholder="Add guests"
             onChange={handleGuestsChange}
             value={guests}
+            
           />
         </div>
         <div
@@ -92,21 +113,23 @@ export const SearchByDate = () => {
         >
           X
         </div>
-        <div className="location-list-container">
-      {locationList &&
-        locationList.map(({ address, city }) => (
-          <p
-            className="location-elements cursor-pointer "
-            // onClick={() => handleSearchResultClick(address)}
-          >
-            {address}, {city}
-          </p>
-         
-        ))}
-         </div>
+
+        {islocationListOpen && (
+          <div className="location-list-container">
+            {locationList &&
+              locationList.map(({ address, city }) => (
+                <p
+                  className="location-elements cursor-pointer "
+                  onClick={() => handlelocationResultClick(address)}
+                >
+                  {address}, {city}
+                </p>
+              ))}
+          </div>
+        )}
+
         <span className="material-icons-outlined cursor-pointer">search</span>
       </div>
-      
     </div>
   );
 };
