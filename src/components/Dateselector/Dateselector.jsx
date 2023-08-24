@@ -32,7 +32,7 @@ export const DateSelector = ({ checkInType}) => {
       selected={checkInType === "in" ? dateCheckIn : dateCheckOut}
       dateFormat="dd/MM/yyyy"
       closeOnScroll={true}
-      placeholderText=" Select Date"
+      placeholderText="Select Date"
       onFocus={handleLocatioListClose}
      
       

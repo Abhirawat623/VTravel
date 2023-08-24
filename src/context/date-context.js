@@ -1,12 +1,12 @@
 import { createContext, useContext, useReducer } from "react";
-import { dateReducer } from "../components/reducer/date-reducer";
+import { dateReducer } from "../reducer/date-reducer";
 
 const initialValue = {
   isSearchModalOpen: false,
   dateCheckIn: null,
   dateCheckOut: null,
   location:"",
-  guests:0,
+  guests:"",
   islocationListOpen:false
 };
 const DateContext = createContext(initialValue);

@@ -2,13 +2,15 @@ import { DateSelector } from "../Dateselector/Dateselector";
 import { useEffect, useState } from "react";
 import { useDate, useCategory } from "../../context/index";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 export const SearchByDate = () => {
+  //navigate
+  const navigate = useNavigate();
   const { dateDispatch, location, guests, islocationListOpen } = useDate();
   const { hotelCategory } = useCategory();
   //for link
   const [hotels, setHotels] = useState([]);
-
-  useEffect(() => {
+   useEffect(() => {
     (async () => {
       try {
         const { data } = await axios.get(
@@ -42,7 +44,6 @@ export const SearchByDate = () => {
       payload: event.target.value,
     });
   };
-  console.log("guetst", guests);
 
   const locationList = hotels.filter(
     ({ address, city, state, country }) =>
@@ -52,9 +53,7 @@ export const SearchByDate = () => {
       country.toLowerCase().includes(location.toLowerCase())
   );
 
-  console.log(locationList);
   //location click
-
   const handlelocationResultClick = (address) => {
     dateDispatch({
       type: "LOCATION",
@@ -63,14 +62,21 @@ export const SearchByDate = () => {
   };
 
   //focus of search-date bar
-
   const handleLocationListOpen = () => {
     dateDispatch({
       type: "OPEN_LOCATION_LIST",
       payload: islocationListOpen,
     });
   };
-
+ 
+  //search button
+  const handlesearchButton=()=>{
+    dateDispatch({
+      type: "CLOSE_LOCATION_LIST",
+      payload:islocationListOpen
+    })
+    navigate(`/hotels/${location}`)
+  }
   return (
     <div className="searcher-date-container">
       <div className="searcher-date-options">
@@ -83,7 +89,7 @@ export const SearchByDate = () => {
             onChange={handleLocationChange}
             value={location}
             onFocus={handleLocationListOpen}
-            autoFocus
+            onClick={handleLocationListOpen}
           />
         </div>
         {/* check in-out */}
@@ -91,7 +97,6 @@ export const SearchByDate = () => {
           <label className="label cursor-pointer">Check In</label>
           <DateSelector checkInType="in" />
         </div>
-
         <div className="searcher-date-option ">
           <label className="label cursor-pointer">Check Out</label>
           <DateSelector checkInType="out" />
@@ -104,7 +109,6 @@ export const SearchByDate = () => {
             placeholder="Add guests"
             onChange={handleGuestsChange}
             value={guests}
-            
           />
         </div>
         <div
@@ -113,7 +117,6 @@ export const SearchByDate = () => {
         >
           X
         </div>
-
         {islocationListOpen && (
           <div className="location-list-container">
             {locationList &&
@@ -127,8 +130,7 @@ export const SearchByDate = () => {
               ))}
           </div>
         )}
-
-        <span className="material-icons-outlined cursor-pointer">search</span>
+        <span className="material-icons-outlined cursor-pointer" onClick={handlesearchButton}>search</span>
       </div>
     </div>
   );

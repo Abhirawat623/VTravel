@@ -26,7 +26,7 @@ export const dateReducer = (state, { type, payload }) => {
     case "OPEN_LOCATION_LIST":
       return {
         ...state,
-        islocationListOpen: true,
+        islocationListOpen: true
       };
     case "ClOSE_LOCATION_LIST":
       return { ...state,
