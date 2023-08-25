@@ -13,6 +13,7 @@
 @import url('./components//Dateselector//Dateselector.css');
 @import url('./components/SearchByDate//SearchByDate.css');
 @import url('./pages//SingleHotel/SingleHotel.css');
+@import url('./components//FinalPrice//FinalPrice.css');
 
 :root {
   --primary-color: #f8faf3;
