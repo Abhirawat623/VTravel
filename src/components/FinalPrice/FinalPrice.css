@@ -1,6 +1,12 @@
 .final-price-container{
     border: 2px solid var(--shadow);
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    max-width: 80vh;
+    max-height: 60vh;
+    margin: 2.2rem
 }
 
 .final-price-rate-container{
@@ -13,3 +19,23 @@
     font-size: 1.4rem;
     font-weight: bolder;
 }
+
+.reserve-button{
+    width: 80%;
+    color: white;
+    background-color: var(--accent-color);
+}
+.guest-count-input{
+    border: none;
+}
+.guest-count-input:focus {
+    outline: none;
+  }
+
+  .final-price {
+    padding: 10px;
+  }
+  
+  .final-price:last-child {
+    border-top: 1px solid var(--container-border-color);
+  }
