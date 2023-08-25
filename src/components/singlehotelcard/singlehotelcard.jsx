@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { HotelImages, HotelDescription } from "../hotelcomponents/index";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FinalPrice } from "../index";
 
 export const SingleHotelCard = () => {
   const { id } = useParams();
@@ -68,12 +69,10 @@ export const SingleHotelCard = () => {
       </div>
       <div className="single-hotel-mid-section">
         <div>
-          {" "}
           <HotelDescription items={singleHotel} />
         </div>
         <div>
-          {" "}
-          <HotelDescription items={singleHotel} />
+          <FinalPrice items={singleHotel} />
         </div>
       </div>
     </>

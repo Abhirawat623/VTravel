@@ -1,0 +1,15 @@
+.final-price-container{
+    border: 2px solid var(--shadow);
+    padding: 5px;
+}
+
+.final-price-rate-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.final-price-cost{
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
