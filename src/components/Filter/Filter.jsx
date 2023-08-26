@@ -1,8 +1,18 @@
+import { useFilter } from "../../context/index"
+
 export const Filter =()=>{
-    
-    return(
+    const {isFilterModalOpen,filterDispatch}=useFilter();
+    //close modal
+   const handleFilterModalClose =()=>{
+  filterDispatch({
+    type:"IS_FILTER_OPEN",
+    payload:isFilterModalOpen
+  })
+   }
+    return(<>
         <div className="filter-container">
-         nnvjksfjnvdskjvdw nlkjsfnklsdldnlksfknl,kkn fsklddnlk ndflkvnmdflmn
+        <button className="filter-close-button" onClick={handleFilterModalClose}> X</button>
         </div>
-    )
+        
+    </>)
 }

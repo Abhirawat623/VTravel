@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Carousel from "@itseasy21/react-elastic-carousel";
-import { useCategory } from "../../context/index";
+import { useCategory,useFilter} from "../../context/index";
 export const Categories = () => {
+  //filter
+  const {isFilterModalOpen, filterDispatch} =useFilter();
   const [categories, setCategories] = useState([]);
   //for categories
   const { hotelCategory, setHotelCategory } = useCategory();
@@ -41,11 +43,13 @@ export const Categories = () => {
     setHotelCategory(category);
   };
 
-  const handleFilterClick=()=>{
+  const handleFilterClick = () => {
+    filterDispatch({
+      type:"IS_FILTER_OPEN",
+      payload: isFilterModalOpen
+    })
+  };
 
-
-  }
-  
   return (
     <div className="categories-container ">
       {/* { numberOfCategories >= 8 &&
@@ -74,9 +78,11 @@ export const Categories = () => {
             </button>
           ))}
       </Carousel>
-      
-        <span class="material-icons-outlined" onClick={handleFilterClick}>filter_alt</span>
-  
+      <button className="filter-button" onClick={handleFilterClick}>
+        <span class="material-icons-outlined" >
+          filter_alt
+        </span>  <span> Filter</span> 
+      </button>
       {/*     
 { numberOfCategories< categories.length 
 &&a

@@ -1,0 +1,22 @@
+.filter-close-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    color: white;
+    background: red;
+    border-left: 2px solid var(--shadow);
+    border-bottom: 2px solid var(--shadow);
+}
+
+.filter-container{
+ width: 60%;
+    min-height: 60vh;
+    display: flex;
+    border: 2px solid var(--shadow);
+    z-index: 5;
+    position: fixed;
+    left: 19rem;
+    background-color: var(--primary-color);
+
+}

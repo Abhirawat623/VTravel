@@ -1,15 +1,16 @@
 import { createContext,useContext,useReducer} from "react";
+import { filterReducer } from "../reducer/index";
 
 const initialValue = {
-    bed:'any'
+    isFilterModalOpen: false,
 }
 
 const FilterContext = createContext(initialValue);
 
 const FilterProvider =({children})=>{
-
+ const [ {isFilterModalOpen},filterDispatch ] = useReducer( filterReducer,initialValue)
     return(
-   <FilterContext.Provider value={{bed}}>
+   <FilterContext.Provider value={{isFilterModalOpen,filterDispatch}}>
     {children}
    </FilterContext.Provider>
     );

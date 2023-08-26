@@ -1,14 +1,14 @@
 import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
-import { Navbar, HotelCard, Categories,Footer,SearchByDate } from "../../components/index";
+import { Navbar, HotelCard, Categories,Footer,SearchByDate,Filter } from "../../components/index";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useCategory ,useDate} from "../../context/index";
+import { useCategory ,useDate,useFilter} from "../../context/index";
 
 export const Home = () => {
 
   //for date search
   const {isSearchModalOpen} =useDate();
-
+ const {isFilterModalOpen} =useFilter()
 
   //for Infinite Scrolls
   const [hotels, setHotels] = useState([]);
@@ -56,6 +56,7 @@ export const Home = () => {
       <Navbar />
       {isSearchModalOpen && <SearchByDate/>}
           <Categories />
+         {isFilterModalOpen && <Filter/>}
       {hotels && hotels.length > 0 ? (
         <InfiniteScroll
           dataLength={hotels.length}
