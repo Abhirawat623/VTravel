@@ -14,6 +14,7 @@
 @import url('./components/SearchByDate//SearchByDate.css');
 @import url('./pages//SingleHotel/SingleHotel.css');
 @import url('./components//FinalPrice//FinalPrice.css');
+@import url('./components/Filter/Filter.css');
 
 :root {
   --primary-color: #f8faf3;

@@ -21,7 +21,7 @@
 }
 
 .reserve-button{
-    width: 80%;
+    width: 100%;
     color: white;
     background-color: var(--accent-color);
 }

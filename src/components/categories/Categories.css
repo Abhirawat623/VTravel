@@ -1,9 +1,9 @@
 .categories-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 5px;
-    z-index: 1;
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    align-items: center;
+    padding-left: 3rem;
+    z-index: 1
 }
 
 .carousel {
@@ -19,7 +19,6 @@
 .rec.rec-arrow:hover {
     border-radius: 50%;
 }
-
 .rec.rec-arrow:disabled {
     visibility: hidden;
 }

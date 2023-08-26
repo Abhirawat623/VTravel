@@ -6,3 +6,4 @@ export {Footer} from './Footer/Footer';
 export {SearchByDate} from './SearchByDate/SearchByDate';
 export {DateSelector} from './Dateselector/Dateselector';
 export {FinalPrice} from './FinalPrice/FinalPrice';
+export {Filter} from "./Filter/Filter";

@@ -40,6 +40,12 @@ export const Categories = () => {
   const handleCategoryClick = (category) => {
     setHotelCategory(category);
   };
+
+  const handleFilterClick=()=>{
+
+
+  }
+  
   return (
     <div className="categories-container ">
       {/* { numberOfCategories >= 8 &&
@@ -49,9 +55,9 @@ export const Categories = () => {
 } */}
       <Carousel
         className="carousel"
-        itemsToShow={8}
-        itemPadding={[10, 50]}
-        itemsToScroll={8}
+        itemsToShow={6}
+        itemPadding={[5, 10]}
+        itemsToScroll={5}
         pagination={false}
         autoPlaySpeed={2500}
       >
@@ -68,9 +74,12 @@ export const Categories = () => {
             </button>
           ))}
       </Carousel>
+      
+        <span class="material-icons-outlined" onClick={handleFilterClick}>filter_alt</span>
+  
       {/*     
 { numberOfCategories< categories.length 
-&&
+&&a
 <span className="material-icons-outlined cursor-pointer" onClick={handleRightButton}>
         arrow_forward_ios
       </span>
