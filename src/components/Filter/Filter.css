@@ -1,5 +1,7 @@
 @import url("./PriceRange/PriceRange.css");
 @import url("./FreeCancel/FreeCancel.css");
+@import url("./hotelType//hotelType.css");
+@import url('./hotelType//hotelType.css');
 
 .filter-close-button {
   position: absolute;
@@ -8,8 +10,10 @@
   width: 20%;
   color: white;
   background: red;
-  border-left: 2px solid var(--shadow);
-  border-bottom: 2px solid var(--shadow);
+  border: 2px solid var(--shadow);
+  border-top:none;
+  border-right: none;
+
 }
 
 .filter-container {
