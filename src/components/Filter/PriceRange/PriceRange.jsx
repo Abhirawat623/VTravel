@@ -7,11 +7,10 @@ function valueText(value) {
   return `${value}`;
 }
 
-export const PriceRange = () => 
-{
+export const PriceRange = () => {
   const { priceRange, filterDispatch } = useFilter();
   //logic
-  const handlePriceRangeChange = (event ,newValue, activeThumb) => {
+  const handlePriceRangeChange = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
       return;
     } //if no array is in array
@@ -31,7 +30,7 @@ export const PriceRange = () =>
   return (
     <div className="filter-compnent-container">
       <span className="filter-label-name">Price Range</span>
-      <Box>
+      <span><Box>
         <Slider
           sx={{ color: "var(--accent-color)" }}
           getAriaLabel={() => "Minimum Difference"}
@@ -40,11 +39,11 @@ export const PriceRange = () =>
           onChange={handlePriceRangeChange}
           min={100}
           max={25000}
-          valueLabelDisplay="on"
+          valueLabelDisplay={"on"}
           disableSwap
-          
         />
       </Box>
+      </span> 
     </div>
   );
 };
