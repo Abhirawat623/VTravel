@@ -55,7 +55,11 @@ case "MINIMUM_PRICE":
         ),
       ],
     };
-
+ case "IS_CANCEL":
+  return{
+    ...state,
+    isCancellable:payload
+  }
 
     default:
         return state;

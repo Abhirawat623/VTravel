@@ -4,6 +4,7 @@ import { filterReducer } from "../reducer/index";
 const initialValue = {
     isFilterModalOpen: false,
     priceRange:[300,2000],
+    isCancellable:true,
 
 
 }
@@ -11,9 +12,9 @@ const initialValue = {
 const FilterContext = createContext(initialValue);
 
 const FilterProvider =({children})=>{
- const [ {isFilterModalOpen,priceRange},filterDispatch ] = useReducer( filterReducer,initialValue)
+ const [ {isFilterModalOpen,priceRange,isCancellable},filterDispatch ] = useReducer( filterReducer,initialValue)
     return(
-   <FilterContext.Provider value={{isFilterModalOpen,priceRange,filterDispatch}}>
+   <FilterContext.Provider value={{isFilterModalOpen,priceRange,isCancellable,filterDispatch}}>
     {children}
    </FilterContext.Provider>
     );

@@ -1,4 +1,5 @@
 @import url('./PriceRange/PriceRange.css');
+@import url('./FreeCancel/FreeCancel.css');
 
 .filter-close-button{
     position: absolute;
