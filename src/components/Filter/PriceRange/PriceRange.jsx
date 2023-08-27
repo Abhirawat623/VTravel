@@ -7,11 +7,11 @@ function valueText(value) {
   return `${value}`;
 }
 
-export const PriceRange = (newValue, activeThumb) => 
+export const PriceRange = () => 
 {
   const { priceRange, filterDispatch } = useFilter();
   //logic
-  const handlePriceRangeChange = () => {
+  const handlePriceRangeChange = (event ,newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
       return;
     } //if no array is in array
@@ -37,11 +37,12 @@ export const PriceRange = (newValue, activeThumb) =>
           getAriaLabel={() => "Minimum Difference"}
           getAriaValueText={valueText}
           value={priceRange}
+          onChange={handlePriceRangeChange}
           min={100}
           max={25000}
           valueLabelDisplay="on"
           disableSwap
-          onChange={handlePriceRangeChange}
+          
         />
       </Box>
     </div>

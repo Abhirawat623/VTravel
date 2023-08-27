@@ -3,7 +3,7 @@ import { filterReducer } from "../reducer/index";
 
 const initialValue = {
     isFilterModalOpen: false,
-    priceRange:[30,2000],
+    priceRange:[300,2000],
 
 
 }
