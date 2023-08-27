@@ -3,14 +3,17 @@ import { filterReducer } from "../reducer/index";
 
 const initialValue = {
     isFilterModalOpen: false,
+    priceRange:[30,2000],
+
+
 }
 
 const FilterContext = createContext(initialValue);
 
 const FilterProvider =({children})=>{
- const [ {isFilterModalOpen},filterDispatch ] = useReducer( filterReducer,initialValue)
+ const [ {isFilterModalOpen,priceRange},filterDispatch ] = useReducer( filterReducer,initialValue)
     return(
-   <FilterContext.Provider value={{isFilterModalOpen,filterDispatch}}>
+   <FilterContext.Provider value={{isFilterModalOpen,priceRange,filterDispatch}}>
     {children}
    </FilterContext.Provider>
     );

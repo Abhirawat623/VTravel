@@ -5,7 +5,7 @@ import { useDate} from "../../context/index";
 
 export const SingleHotel =()=>{
   //for date search
-  const {isSearchModalOpen,dateDispatch} =useDate();
+  const {isSearchModalOpen} =useDate();
     return(
         <Fragment>  
             <Navbar/>

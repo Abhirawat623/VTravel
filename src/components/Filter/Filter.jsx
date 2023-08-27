@@ -1,5 +1,5 @@
 import { useFilter } from "../../context/index"
-
+import { PriceRange } from "../Filter/index";
 export const Filter =()=>{
     const {isFilterModalOpen,filterDispatch}=useFilter();
     //close modal
@@ -12,6 +12,7 @@ export const Filter =()=>{
     return(<>
         <div className="filter-container">
         <button className="filter-close-button" onClick={handleFilterModalClose}> X</button>
+        <PriceRange/>
         </div>
         
     </>)
