@@ -6,6 +6,10 @@ const initialValue = {
     priceRange:[300,2000],
     isCancellable:true,
     hotelType:"Any",
+    numberOfBeds: "Any",
+    numberOfBathrooms :"Any",
+    numberOfBedrooms: "Any"
+   
 
 
 }
