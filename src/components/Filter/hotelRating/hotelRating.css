@@ -1,0 +1,17 @@
+.filter-rating-boxes{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+  
+}
+.filter-rating-box{
+      border: 1px solid var(--shadow);
+  object-fit: cover;
+  cursor: pointer;
+  text-align: center;
+  padding: 1.2rem;
+  width: 4rem;
+  background-color: var(--accent-color);
+  color: white;
+}

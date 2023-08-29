@@ -28,22 +28,23 @@ export const PriceRange = () => {
     }
   };
   return (
-    <div className="filter-compnent-container">
-      <span className="filter-label-name">Price Range</span>
-      <span><Box>
-        <Slider
-          sx={{ color: "var(--accent-color)" }}
-          getAriaLabel={() => "Minimum Difference"}
-          getAriaValueText={valueText}
-          value={priceRange}
-          onChange={handlePriceRangeChange}
-          min={100}
-          max={25000}
-          valueLabelDisplay={"on"}
-          disableSwap
-        />
-      </Box>
-      </span> 
+    <div className="filter-component-container ">
+      <span className="filter-label-name ">Price Range</span>
+      <span>
+        <Box className="filter-box">
+          <Slider
+            sx={{ color: "var(--accent-color)" }}
+            getAriaLabel={() => "Minimum Difference"}
+            getAriaValueText={valueText}
+            value={priceRange}
+            onChange={handlePriceRangeChange}
+            min={100}
+            max={25000}
+            valueLabelDisplay={"on"}
+            disableSwap
+          />
+        </Box>
+      </span>
     </div>
   );
 };

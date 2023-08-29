@@ -1,5 +1,5 @@
 import { useFilter } from "../../context/index"
-import { PriceRange ,FreeCancel, HoteType} from "../Filter/index";
+import { PriceRange ,FreeCancel, HoteType, HotelRating} from "../Filter/index";
 export const Filter =()=>{
     const {isFilterModalOpen,filterDispatch}=useFilter();
     //close modal
@@ -15,6 +15,7 @@ export const Filter =()=>{
         <PriceRange/>
         <HoteType/>
         <FreeCancel/>
+        <HotelRating/>
         </div>
         
     </>)

@@ -26,7 +26,7 @@ export const HoteType = () => {
       <div className="filter-hotel-type-icons ">
         {propertyType.map(({ id, type }) => (
           <span 
-          className={`${hotelType===type? 'selcted':''} property-type`}
+          className={`${hotelType===type? 'selected':''} property-type`}
           key={id}
           onClick={() => handlePropertyClick(type)}>
             {type}
