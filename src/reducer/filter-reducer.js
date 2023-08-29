@@ -63,6 +63,37 @@ export const filterReducer = (state, { type, payload }) => {
         ...state,
         hotelType: payload,
       };
+    case "RATING":
+      return {
+        ...state,
+        vTravelRating: Number(payload),
+      };
+
+    case "HOTEL_TYPE":
+      return {
+        ...state,
+        hotelType: payload,
+      };
+    case "NUMBER_OF_BEDS":
+      return {
+        ...state,
+        numberOfBeds:
+          payload === "Any" ? payload : payload === "5+" ? 5 : Number(payload),
+          
+      };
+    case "NUMBER_OF_BEDROOMS":
+      return {
+        ...state,
+        numberOfBedrooms:
+          payload === "Any" ? payload : payload === "5+" ? 5 : Number(payload),
+      };
+
+    case "NUMBER_OF_BATHROOMS":
+      return {
+        ...state,
+        numberOfBathrooms:
+          (payload === "Any" / payload) === "5+" ? 5 : Number(payload),
+      };
     default:
       return state;
   }

@@ -20,12 +20,13 @@
 
 .filter-container {
   width: 60%;
-  min-height: 60vh;
+
   display: flex;
   border: 2px solid var(--shadow);
-  z-index: 5;
+  z-index: 2;
   position: fixed;
-  left: 19rem;
+  left: 21rem;
+  top: 5rem;
   background-color: var(--primary-color);
   flex-direction: column;
   padding: 3rem;

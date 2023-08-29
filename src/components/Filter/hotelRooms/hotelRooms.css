@@ -15,3 +15,15 @@
     color: white;
     gap:5px;
   }
+
+  .filter-rooms{
+    display: flex;
+    flex-direction: row;
+  gap:1rem;
+  text-align: center;
+  
+  }
+
+  .filter-rooms-label{
+   padding: 1rem;
+  }

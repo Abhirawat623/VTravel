@@ -8,8 +8,8 @@ const initialValue = {
     hotelType:"Any",
     numberOfBeds: "Any",
     numberOfBathrooms :"Any",
-    numberOfBedrooms: "Any"
-   
+    numberOfBedrooms: "Any",
+   vTravelRating:1,
 
 
 }
