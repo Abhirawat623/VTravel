@@ -3,6 +3,7 @@
 @import url("./hotelType//hotelType.css");
 @import url('./hotelType//hotelType.css');
 @import url('./hotelRating/hotelRating.css');
+@import url('./hotelRooms/hotelRooms.css');
 
 .filter-close-button {
   position: absolute;

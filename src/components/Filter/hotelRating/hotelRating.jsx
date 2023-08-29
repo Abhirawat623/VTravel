@@ -19,7 +19,7 @@ export const HotelRating = () => {
         {ratings.map((rating) => (
           <span
           className="filter-rating-box selected"
-          key="rating"
+           key={rating}
             onClick={() => handleRatingsCLick(rating)}
           >
             {rating}

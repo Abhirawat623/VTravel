@@ -1,0 +1,17 @@
+.filter-rooms-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.filter-hotel-rooms-box{
+    border: 1px solid var(--shadow);
+    object-fit: cover;
+    cursor: pointer;
+    text-align: center;
+    padding: 1.2rem;
+    width: 4rem;
+    background-color: var(--accent-color);
+    color: white;
+    gap:5px;
+  }

@@ -10,7 +10,7 @@ export const FreeCancel = () => {
     });
   };
   return (
-    <div className="filter-component-container gap-xl">
+    <div className="gap-xl">
       <label className="filter-label-name">Free Cancellation</label>
 
       <input
