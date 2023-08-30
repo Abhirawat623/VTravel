@@ -3,12 +3,13 @@ import axios from "axios";
 import { Navbar, HotelCard, Categories,Footer,SearchByDate,Filter } from "../../components/index";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useCategory ,useDate,useFilter} from "../../context/index";
+import { getHotelsByPrice } from "../../utils/index";
 
 export const Home = () => {
 
   //for date search
   const {isSearchModalOpen} =useDate();
- const {isFilterModalOpen} =useFilter()
+ const {isFilterModalOpen,priceRange} =useFilter()
 
   //for Infinite Scrolls
   const [hotels, setHotels] = useState([]);
@@ -49,7 +50,7 @@ export const Home = () => {
     }, 700);
   };
 
-
+const filteredHotelByPrice = getHotelsByPrice(hotels,priceRange);
   return (
     <Fragment>
       <div className="bg-all" >
@@ -62,16 +63,16 @@ export const Home = () => {
           dataLength={hotels.length}
           next={fetchMoreHotels}
           hasMore={hasMore}
-          loader={hotels.length > 10 && <span className="loader">Loading....</span>}
+          loader={hotels.length > 10 && filteredHotelByPrice.length >10 && <span className="loader">Loading....</span>}
           endMessage={
             <p className="last-message">
-              You have reached to the Last section &#x1F304; &#9749;{" "}
+              You have reached to the Last section &#x1F304; &#9749;
             </p>
           }
         >
           <main className="hotelcard-container">
-            {hotels &&
-              hotels.map((hotel) => (
+            {filteredHotelByPrice &&
+              filteredHotelByPrice.map((hotel) => (
                 <HotelCard key={hotel._id} items={hotel} />
               ))}
           </main>

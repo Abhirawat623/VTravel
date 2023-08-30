@@ -35,7 +35,7 @@ export const HotelRooms = () => {
         {quantityOfRoomsandBeds.map((number) => (
           <span
             className={`${
-              numberOfBedrooms === number ? "selected" : ""
+              numberOfBedrooms.toString() === number ? "selected" : ""
             } filter-hotel-rooms-box `}
             key={number}
             onClick={() => handleBedrooms(number)}
@@ -50,7 +50,7 @@ export const HotelRooms = () => {
         {quantityOfRoomsandBeds.map((number) => (
           <span
             className={`${
-              numberOfBeds === number ? "selected" : ""
+              numberOfBeds.toString() === number ? "selected" : ""
             } filter-hotel-rooms-box `}
             key={number}
             onClick={() => handleBeds(number)}
@@ -65,7 +65,7 @@ export const HotelRooms = () => {
         {quantityOfRoomsandBeds.map((number) => (
           <span
             className={`${
-              numberOfBathrooms === number ? "selected" : ""
+              numberOfBathrooms.toString() === number ? "selected" : ""
             } filter-hotel-rooms-box `}
             key={number}
             onClick={() => handleBathrooms(number)}
