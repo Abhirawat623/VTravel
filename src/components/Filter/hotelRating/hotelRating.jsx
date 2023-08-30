@@ -5,10 +5,10 @@ const ratings = ["1", "2", "3", "4", "5"];
 export const HotelRating = () => {
   const { filterDispatch } = useFilter();
 
-  const handleRatingsCLick = (ratings) => {
+  const handleRatingsCLick = (rating) => {
     filterDispatch({
       type: "RATING",
-      payload: ratings,
+      payload: rating,
     });
   };
 

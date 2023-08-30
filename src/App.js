@@ -9,8 +9,6 @@ function App() {
      element={<SingleHotel/>}/>
     <Route path="/hotels/:address" element={<ResultPage />} />
    </Routes>
-  
-
   );
 }
 

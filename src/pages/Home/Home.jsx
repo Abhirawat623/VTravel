@@ -10,7 +10,7 @@ import {
 } from "../../components/index";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useCategory, useDate, useFilter } from "../../context/index";
-import { getHotelsByPrice, getHotelsByRoomsAndBeds } from "../../utils/index";
+import { getHotelsByPrice, getHotelsByRoomsAndBeds,getHotelsByRatings } from "../../utils/index";
 
 export const Home = () => {
   //for date search
@@ -21,6 +21,7 @@ export const Home = () => {
     noOfBathrooms,
     noOfBedrooms,
     noOfBeds,
+    vTravelRating
   } = useFilter();
 
   //for Infinite Scrolls
@@ -61,14 +62,17 @@ export const Home = () => {
       }
     }, 700);
   };
-
+ //price filter
   const filteredHotelByPrice = getHotelsByPrice(hotels, priceRange);
+  //rooms and beds filter
   const filteredHotelsByRoomsAndBeds = getHotelsByRoomsAndBeds(
     filteredHotelByPrice,
     noOfBathrooms,
     noOfBedrooms,
     noOfBeds
   );
+  //ratings filter
+   const filteredHotelsByRatings = getHotelsByRatings( filteredHotelsByRoomsAndBeds, vTravelRating);
   return (
     <Fragment>
       <div className="bg-all">
@@ -83,7 +87,7 @@ export const Home = () => {
             hasMore={hasMore}
             loader={
               hotels.length > 10 &&
-              filteredHotelsByRoomsAndBeds.length > 10 && (
+              filteredHotelsByRatings.length > 10 && (
                 <span className="loader">Loading....</span>
               )
             }
@@ -94,8 +98,8 @@ export const Home = () => {
             }
           >
             <main className="hotelcard-container">
-              {filteredHotelsByRoomsAndBeds &&
-                filteredHotelsByRoomsAndBeds.map((hotel) => (
+              {filteredHotelsByRatings &&
+                filteredHotelsByRatings.map((hotel) => (
                   <HotelCard key={hotel._id} items={hotel} />
                 ))}
             </main>
