@@ -3,7 +3,7 @@ import { useFilter } from "../../../context/index";
 const ratings = ["1", "2", "3", "4", "5"];
 
 export const HotelRating = () => {
-  const { filterDispatch } = useFilter();
+  const { filterDispatch, vTravelRating } = useFilter();
 
   const handleRatingsCLick = (rating) => {
     filterDispatch({
@@ -11,15 +11,16 @@ export const HotelRating = () => {
       payload: rating,
     });
   };
-
   return (
     <div className="filter-component-container">
       <span className="filter-rating-container">Ratings</span>
-      <span className="filter-rating-boxes">
+      <span className="filter-rating-boxes ">
         {ratings.map((rating) => (
           <span
-          className="filter-rating-box selected"
-           key={rating}
+            className={`${
+              vTravelRating.toString() === rating ? "selected" : ""
+            } filter-rating-box `}
+            key={rating}
             onClick={() => handleRatingsCLick(rating)}
           >
             {rating}

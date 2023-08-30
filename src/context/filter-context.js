@@ -9,17 +9,16 @@ const initialValue = {
     noOfBeds: "Any",
     noOfBathrooms :"Any",
     noOfBedrooms: "Any",
-   vTravelRating:1,
-
+    vTravelRating: 1,
 
 }
 
 const FilterContext = createContext(initialValue);
 
 const FilterProvider =({children})=>{
- const [ {isFilterModalOpen,priceRange,isCancellable,hotelType,noOfBeds, noOfBedrooms, noOfBathrooms},filterDispatch ] = useReducer( filterReducer,initialValue)
+ const [ {isFilterModalOpen,priceRange,isCancellable,hotelType,noOfBeds, noOfBedrooms, noOfBathrooms,vTravelRating},filterDispatch ] = useReducer( filterReducer,initialValue)
     return(
-   <FilterContext.Provider value={{isFilterModalOpen,priceRange,isCancellable,hotelType,filterDispatch,noOfBeds, noOfBedrooms, noOfBathrooms}}>
+   <FilterContext.Provider value={{isFilterModalOpen,priceRange,isCancellable,hotelType,noOfBeds, noOfBedrooms, noOfBathrooms,vTravelRating,filterDispatch}}>
     {children}
    </FilterContext.Provider>
     );

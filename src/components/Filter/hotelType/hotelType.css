@@ -12,10 +12,7 @@
   background-color: var(--accent-color);
   color: white;
 }
-.selected {
-  background-color: white;
-  color: black;
-}
+
 .property-type:hover {
   background-color: white;
   color: black;

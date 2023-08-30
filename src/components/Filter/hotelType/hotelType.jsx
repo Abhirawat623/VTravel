@@ -2,6 +2,7 @@ import { v4 as uuid } from "uuid";
 import { useFilter } from "../../../context/index";
 
 const propertyType = [
+  { id: uuid(), type: "Any" },
   { id: uuid(), type: "House" },
   { id: uuid(), type: "Guest House" },
   { id: uuid(), type: "Flat" },

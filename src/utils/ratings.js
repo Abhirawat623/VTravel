@@ -1,4 +1,4 @@
-export const  getHotelsByRatings= ( hotels, vTravelRating)=>{
- const filteredHotels = hotels.filter((hotel)=> hotel.rating >= vTravelRating);
- return filteredHotels
+export const  getHotelsByRatings= ( hotels, rating)=>{
+ const filteredHotels = hotels.filter((hotel)=> hotel.rating >= rating);
+ return filteredHotels;
 }

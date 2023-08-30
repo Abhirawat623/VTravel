@@ -1,12 +1,10 @@
-.filter-rating-boxes{
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-
-  
+.filter-rating-boxes {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 }
-.filter-rating-box{
-      border: 1px solid var(--shadow);
+.filter-rating-box {
+  border: 1px solid var(--shadow);
   object-fit: cover;
   cursor: pointer;
   text-align: center;
@@ -14,8 +12,9 @@
   width: 4rem;
   background-color: var(--accent-color);
   color: white;
-
 }
-.filter-rating-box:hover{
-background-color: white;
-color: black;}
+.filter-rating-box:hover {
+  background-color: white;
+  color: black;
+}
+

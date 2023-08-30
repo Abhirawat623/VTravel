@@ -1,38 +1,37 @@
-.filter-rooms-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.filter-rooms-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.filter-hotel-rooms-box{
-    border: 1px solid var(--shadow);
-    object-fit: cover;
-    cursor: pointer;
-    text-align: center;
-    padding: 1.2rem;
-    width: 4rem;
-    background-color: var(--accent-color);
-    color: white;
-    gap:5px;
-  }
-
-  .filter-rooms{
-    display: flex;
-    flex-direction: row;
-  gap:1rem;
+.filter-hotel-rooms-box {
+  border: 1px solid var(--shadow);
+  object-fit: cover;
+  cursor: pointer;
   text-align: center;
-  
-  }
+  padding: 1.2rem;
+  width: 4rem;
+  background-color: var(--accent-color);
+  color: white;
+  gap: 5px;
+}
 
-  .filter-rooms-label{
-   padding: 1rem;
-  }
-  .selected {
-    background-color:  rgb(82, 33, 1);
-    color: white;
-  }
- 
-    .filter-hotel-rooms-box:hover{
-      background-color: white;
-      color: black;
-    }
+.filter-rooms {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  text-align: center;
+}
+
+.filter-rooms-label {
+  padding: 1rem;
+}
+.selected {
+  background-color: rgb(255, 123, 0);
+  color: white;
+}
+
+.filter-hotel-rooms-box:hover {
+  background-color: white;
+  color: black;
+}
