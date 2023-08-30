@@ -1,15 +1,27 @@
 import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
-import { Navbar, HotelCard, Categories,Footer,SearchByDate,Filter } from "../../components/index";
+import {
+  Navbar,
+  HotelCard,
+  Categories,
+  Footer,
+  SearchByDate,
+  Filter,
+} from "../../components/index";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useCategory ,useDate,useFilter} from "../../context/index";
-import { getHotelsByPrice } from "../../utils/index";
+import { useCategory, useDate, useFilter } from "../../context/index";
+import { getHotelsByPrice, getHotelsByRoomsAndBeds } from "../../utils/index";
 
 export const Home = () => {
-
   //for date search
-  const {isSearchModalOpen} =useDate();
- const {isFilterModalOpen,priceRange} =useFilter()
+  const { isSearchModalOpen } = useDate();
+  const {
+    isFilterModalOpen,
+    priceRange,
+    noOfBathrooms,
+    noOfBedrooms,
+    noOfBeds,
+  } = useFilter();
 
   //for Infinite Scrolls
   const [hotels, setHotels] = useState([]);
@@ -50,39 +62,49 @@ export const Home = () => {
     }, 700);
   };
 
-const filteredHotelByPrice = getHotelsByPrice(hotels,priceRange);
+  const filteredHotelByPrice = getHotelsByPrice(hotels, priceRange);
+  const filteredHotelsByRoomsAndBeds = getHotelsByRoomsAndBeds(
+    filteredHotelByPrice,
+    noOfBathrooms,
+    noOfBedrooms,
+    noOfBeds
+  );
   return (
     <Fragment>
-      <div className="bg-all" >
-      <Navbar />
-      {isSearchModalOpen && <SearchByDate/>}
-          <Categories />
-         {isFilterModalOpen && <Filter/>}
-      {hotels && hotels.length > 0 ? (
-        <InfiniteScroll
-          dataLength={hotels.length}
-          next={fetchMoreHotels}
-          hasMore={hasMore}
-          loader={hotels.length > 10 && filteredHotelByPrice.length >10 && <span className="loader">Loading....</span>}
-          endMessage={
-            <p className="last-message">
-              You have reached to the Last section &#x1F304; &#9749;
-            </p>
-          }
-        >
-          <main className="hotelcard-container">
-            {filteredHotelByPrice &&
-              filteredHotelByPrice.map((hotel) => (
-                <HotelCard key={hotel._id} items={hotel} />
-              ))}
-          </main>
-        </InfiniteScroll>
-      ) : (
-        <></>
-      )}
-   
+      <div className="bg-all">
+        <Navbar />
+        {isSearchModalOpen && <SearchByDate />}
+        <Categories />
+        {isFilterModalOpen && <Filter />}
+        {hotels && hotels.length > 0 ? (
+          <InfiniteScroll
+            dataLength={hotels.length}
+            next={fetchMoreHotels}
+            hasMore={hasMore}
+            loader={
+              hotels.length > 10 &&
+              filteredHotelsByRoomsAndBeds.length > 10 && (
+                <span className="loader">Loading....</span>
+              )
+            }
+            endMessage={
+              <p className="last-message">
+                You have reached to the Last section &#x1F304; &#9749;
+              </p>
+            }
+          >
+            <main className="hotelcard-container">
+              {filteredHotelsByRoomsAndBeds &&
+                filteredHotelsByRoomsAndBeds.map((hotel) => (
+                  <HotelCard key={hotel._id} items={hotel} />
+                ))}
+            </main>
+          </InfiniteScroll>
+        ) : (
+          <></>
+        )}
 
-      <Footer/>
+        <Footer />
       </div>
     </Fragment>
   );

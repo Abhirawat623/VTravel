@@ -16,7 +16,7 @@
   background-color: white;
   color: black;
 }
-.selected:hover {
-    background-color: var(--shadow);
-    color: black;
-  }
+.property-type:hover {
+  background-color: white;
+  color: black;
+}

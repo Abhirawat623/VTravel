@@ -27,3 +27,12 @@
   .filter-rooms-label{
    padding: 1rem;
   }
+  .selected {
+    background-color:  rgb(82, 33, 1);
+    color: white;
+  }
+ 
+    .filter-hotel-rooms-box:hover{
+      background-color: white;
+      color: black;
+    }

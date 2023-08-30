@@ -77,21 +77,21 @@ export const filterReducer = (state, { type, payload }) => {
     case "NUMBER_OF_BEDS":
       return {
         ...state,
-        numberOfBeds:
+        noOfBeds:
           payload === "Any" ? payload : payload === "5+" ? 5 : Number(payload),
           
       };
     case "NUMBER_OF_BEDROOMS":
       return {
         ...state,
-        numberOfBedrooms:
+        noOfBedrooms:
           payload === "Any" ? payload : payload === "5+" ? 5 : Number(payload),
       };
 
     case "NUMBER_OF_BATHROOMS":
       return {
         ...state,
-        numberOfBathrooms:
+        noOfBathrooms:
           (payload === "Any" / payload) === "5+" ? 5 : Number(payload),
       };
     default:

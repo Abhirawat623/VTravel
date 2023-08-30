@@ -3,7 +3,7 @@ import { useFilter } from "../../../context/index";
 const quantityOfRoomsandBeds = ["Any", "1", "2", "3", "4", "5+"];
 
 export const HotelRooms = () => {
-  const { numberOfBeds, numberOfBedrooms, numberOfBathrooms, filterDispatch } = useFilter();
+  const { noOfBeds, noOfBedrooms, noOfBathrooms, filterDispatch } = useFilter();
   const handleBedrooms = (number) => {
     filterDispatch({
       type: "NUMBER_OF_BEDROOMS",
@@ -35,7 +35,7 @@ export const HotelRooms = () => {
         {quantityOfRoomsandBeds.map((number) => (
           <span
             className={`${
-              numberOfBedrooms.toString() === number ? "selected" : ""
+              noOfBedrooms.toString() === number ? "selected" : ""
             } filter-hotel-rooms-box `}
             key={number}
             onClick={() => handleBedrooms(number)}
@@ -50,7 +50,7 @@ export const HotelRooms = () => {
         {quantityOfRoomsandBeds.map((number) => (
           <span
             className={`${
-              numberOfBeds.toString() === number ? "selected" : ""
+              noOfBeds.toString() === number ? "selected" : ""
             } filter-hotel-rooms-box `}
             key={number}
             onClick={() => handleBeds(number)}
@@ -65,7 +65,7 @@ export const HotelRooms = () => {
         {quantityOfRoomsandBeds.map((number) => (
           <span
             className={`${
-              numberOfBathrooms.toString() === number ? "selected" : ""
+              noOfBathrooms.toString() === number ? "selected" : ""
             } filter-hotel-rooms-box `}
             key={number}
             onClick={() => handleBathrooms(number)}
