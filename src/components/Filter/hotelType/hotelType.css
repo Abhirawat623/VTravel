@@ -1,6 +1,6 @@
 .filter-hotel-type-icons {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto;
   gap: 1rem;
 }
 .property-type {

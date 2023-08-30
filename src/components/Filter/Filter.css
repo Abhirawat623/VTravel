@@ -15,12 +15,14 @@
   border: 2px solid var(--shadow);
   border-top:none;
   border-right: none;
+  
 
 }
 
 .filter-container {
   width: 60%;
-
+  height: 70%;
+  overflow-y: auto;
   display: flex;
   border: 2px solid var(--shadow);
   z-index: 2;
@@ -29,6 +31,12 @@
   top: 5rem;
   background-color: var(--primary-color);
   flex-direction: column;
-  padding: 3rem;
+  padding-top: 25rem;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:2rem;
+  
 }
