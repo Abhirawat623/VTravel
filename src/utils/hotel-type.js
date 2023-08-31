@@ -1,8 +1,8 @@
-export const getHotelsByType = (hotels,propertyType)=>{
-    if(propertyType=== "Any")
+export const getHotelsByType = (hotels,hotelType)=>{
+    if(hotelType=== "Any")
     return hotels;
 
     const filteredHotels = hotels.map((hotel)=>(
-        hotel.propertyType === propertyType));
+        hotel.propertyType === hotelType));
         return filteredHotels;
 }
