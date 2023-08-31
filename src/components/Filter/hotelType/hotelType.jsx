@@ -1,8 +1,8 @@
 import { v4 as uuid } from "uuid";
 import { useFilter } from "../../../context/index";
 
-const propertyType = [
-  { id: uuid(), type: "Any" },
+const propertyTypes = [
+ 
   { id: uuid(), type: "House" },
   { id: uuid(), type: "Guest House" },
   { id: uuid(), type: "Flat" },
@@ -10,13 +10,13 @@ const propertyType = [
 ];
 
 export const HoteType = () => {
-  const { hotelType, filterDispatch } = useFilter();
-  console.log(hotelType);
+  const { propertyType, filterDispatch } = useFilter();
+  console.log(propertyType);
   //logic
-  const handlePropertyClick = (property) => {
+  const handlePropertyClick = (type) => {
     filterDispatch({
       type: "HOTEL_TYPE",
-      payload: property,
+      payload: type,
     });
   };
 
@@ -25,9 +25,9 @@ export const HoteType = () => {
       <label className="filter-label-name">Type</label>
 
       <div className="filter-hotel-type-icons ">
-        {propertyType.map(({ id, type }) => (
+        {propertyTypes.map(({ id, type }) => (
           <span 
-          className={`${hotelType===type? 'selected':''} property-type`}
+          className={`${propertyType===type? 'selected':''} property-type`}
           key={id}
           onClick={() => handlePropertyClick(type)}>
             {type}

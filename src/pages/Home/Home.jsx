@@ -27,7 +27,7 @@ export const Home = () => {
     noOfBedrooms,
     noOfBeds,
     vTravelRating,
-    hotelType,
+    propertyType,
   } = useFilter();
 
   //for Infinite Scrolls
@@ -86,7 +86,7 @@ export const Home = () => {
 
   const filteredHotelsByType = getHotelsByType(
     filteredHotelsByRatings,
-    hotelType
+    propertyType
   );
   console.log(filteredHotelsByRatings);
   return (

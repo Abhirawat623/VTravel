@@ -61,7 +61,7 @@ export const filterReducer = (state, { type, payload }) => {
     case "HOTEL_TYPE":
       return {
         ...state,
-        hotelType: payload,
+        propertyType: payload,
       };
     case "RATING":
       return {
@@ -69,11 +69,6 @@ export const filterReducer = (state, { type, payload }) => {
         vTravelRating: Number(payload),
       };
 
-    case "HOTEL_TYPE":
-      return {
-        ...state,
-        hotelType: payload,
-      };
     case "NUMBER_OF_BEDS":
       return {
         ...state,
