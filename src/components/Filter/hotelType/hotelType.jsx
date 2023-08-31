@@ -13,10 +13,10 @@ export const HoteType = () => {
   const { hotelType, filterDispatch } = useFilter();
   console.log(hotelType);
   //logic
-  const handlePropertyClick = (property) => {
+  const handlePropertyClick = (type) => {
     filterDispatch({
       type: "HOTEL_TYPE",
-      payload: property,
+      payload: type,
     });
   };
 
