@@ -31,8 +31,8 @@ const {dateDispatch} =useDate();
             <span className="material-icons-outlined searcher">search</span>
           </div>
 
-          <ul className="navbar-items  d-flex dir-row ">
-            <li className="nav-icon">
+          <Link className="navbar-items  d-flex dir-row ">
+            <li className="nav-icon" to="/login">
               <span className="material-icons-outlined cursor-pointer">person</span>
             </li>
             <li className="nav-icon">
@@ -40,7 +40,7 @@ const {dateDispatch} =useDate();
                 drag_indicator
               </span>
             </li>
-          </ul>
+          </Link>
         </div>
       </nav>
     

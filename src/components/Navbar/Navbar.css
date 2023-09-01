@@ -1,12 +1,9 @@
-
-
 .nav-logo {
   height: 60px;
   width: 132px;
   padding: 5px;
   margin-left: 1rem;
   border-radius: 5px;
-  
 }
 
 .form-container {
@@ -21,13 +18,16 @@
   padding-right: 7px;
 }
 
-.navbar-items{
+.navbar-items {
   padding: 8px;
   text-decoration: none;
   list-style: none;
 }
+.navbar-items:visited {
+  color: var(--accent-color);
+}
 
-.searcher{
+.searcher {
   background-color: var(--accent-color);
   padding: 5px;
   color: white;
