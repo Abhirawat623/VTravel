@@ -1,7 +1,41 @@
 import "../SignUp/SignUp.css";
 import { Navbar, Footer } from "../../components/index";
-
+import { useAuth } from "../../context/index";
 export const SignUp = () => {
+  const { email, password, name, number, confirmPassword, authDispatch } =
+    useAuth();
+
+  const handlePasswordSignupChange = (event) => {
+    authDispatch({
+      type: "PASSWORD",
+      payload: event.target.value,
+    });
+  };
+  const handleNameSignupChange = (event) => {
+    authDispatch({
+      type: "NAME",
+      payload: event.target.value,
+    });
+  };
+  const handleMobileSignupChange = (event) => {
+    authDispatch({
+      type: "NUMBER",
+      payload: event.target.value,
+    });
+  };
+  const handleEmailSignupChange = (event) => {
+    authDispatch({
+      type: "EMAIL",
+      payload: event.target.value,
+    });
+  };
+  const handleConfirmPasswordSignupChange = (event) => {
+    authDispatch({
+      type: "CONFIRM_PASSWORD",
+      payload: event.target.value,
+    });
+  };
+  console.log(name, password, confirmPassword, number, email);
   return (
     <>
       <Navbar />
@@ -12,28 +46,63 @@ export const SignUp = () => {
             <span className="auth-signup-background">
               <div className="auth-form">
                 <div className="auth-form">
-                  <label className="form-label color-white ml-l">Name</label>
-                  <input className="input-form" placeholder="Full Name" />
+                  <label className="form-label color-white ml-l">Name*</label>
+                  <input
+                    className="input-form"
+                    placeholder="Enter Full Name"
+                    required
+                    value={name}
+                    onChange={handleNameSignupChange}
+                  />
+                </div>
+                <div className="auth-form">
+                  <label className="form-label color-white ml-l">E-mail*</label>
+                  <input
+                    className="input-form"
+                    placeholder="Enter E-mail"
+                    required
+                    value={email}
+                    onChange={handleEmailSignupChange}
+                  />
                 </div>
                 <div className="auth-form">
                   <label className="form-label color-white ml-l">
-                    Password
+                    Password*
                   </label>
-                  <input className="input-form" placeholder="*********" />
+                  <input
+                    className="input-form"
+                    placeholder="*********"
+                    required
+                    onChange={handlePasswordSignupChange}
+                    value={password}
+                  />
+                </div>
+                <div className="auth-form">
+                  <label className="form-label color-white ml-l">
+                    Confirm Password*
+                  </label>
+                  <input
+                    className="input-form"
+                    placeholder="*********"
+                    required
+                    onChange={handleConfirmPasswordSignupChange}
+                    value={confirmPassword}
+                  />
                 </div>
                 <label className="form-label color-white  ">
-                  Mobile Number
+                  Mobile Number*
                 </label>
-                <input className="input-form" placeholder="Valid Number" />
-              </div>
-              <div className="auth-form">
-                <label className="form-label color-white ml-l">e-mail</label>
-                <input className="input-form" placeholder="xyz@abc.com" />
+                <input
+                  className="input-form"
+                  placeholder="Enter Mobile Number"
+                  maxLength={10}
+                  required
+                  value={number}
+                  onChange={handleMobileSignupChange}
+                />
               </div>
             </span>
-       
-              <button className="auth-login-btn ">Create Account</button>
-          
+            <button className="auth-login-btn ">Create Account</button>
           </form>
         </div>
       </div>

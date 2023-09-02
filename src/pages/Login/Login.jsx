@@ -21,7 +21,7 @@ export const Login = () => {
                 </label>
                 <input
                   className="input-form"
-                  placeholder="Mobile Number input"
+                  placeholder="Enter Mobile Number"
                 />
               </div>
               <div className="auth-form">

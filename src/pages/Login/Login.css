@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 22rem;
+  height: 26rem;
   background-color: var(--accent-color);
-  margin: 5rem;
+  margin: 4rem;
 }
 
 .auth-login-btn {
@@ -22,7 +22,7 @@
   border: 1px solid var(--accent-color);
   padding: 4px;
   margin: 5px;
-  min-width: 25vh;
+  min-width: 30vh;
 }
 
 .color-white {
@@ -46,15 +46,15 @@
   text-align: center;
 }
 .input-form {
-  min-width: 25vh;
+  min-width: 35vh;
 }
 
 .auth-background {
   background-color: rgba(255, 255, 255, 0.1);
-  border: 5px solid rgba(255, 255, 255, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(1px);
   min-height: 15vh;
-  min-width: 25vh;
+  min-width: 32vh;
   padding: 5px;
 }
 .signup-container {

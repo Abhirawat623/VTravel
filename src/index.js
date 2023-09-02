@@ -1,7 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { CategoryProvider,DateProvider,FilterProvider } from "./context/index";
+import {
+  CategoryProvider,
+  DateProvider,
+  FilterProvider,
+  AuthProvider,
+} from "./context/index";
 import { BrowserRouter as Router } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -10,8 +15,10 @@ root.render(
       <CategoryProvider>
         <DateProvider>
           <FilterProvider>
-        <App />
-        </FilterProvider>
+            <AuthProvider>
+              <App />
+            </AuthProvider>
+          </FilterProvider>
         </DateProvider>
       </CategoryProvider>
     </Router>
