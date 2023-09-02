@@ -1,0 +1,6 @@
+.auth-signup-background {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  padding: 5px;
+}

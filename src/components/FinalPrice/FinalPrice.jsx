@@ -52,7 +52,7 @@ export const FinalPrice = ({ items }) => {
           className="reserve-button pointer-cursor"
         //   onClick={handleReserveClick}
         >
-          Reserve
+          Reserveb
         </button>
    
        <div className="price-distribution d-flex dir-col ">

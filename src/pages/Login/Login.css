@@ -22,28 +22,41 @@
   border: 1px solid var(--accent-color);
   padding: 4px;
   margin: 5px;
- 
+  min-width: 25vh;
 }
 
 .color-white {
   color: white;
 }
 
-.gap-text-s{
-    gap:5px
+.gap-text-s {
+  gap: 5px;
 }
 
-
-.text-gap-m{
-    gap:5px
+.text-gap-m {
+  gap: 5px;
 }
 
-.auth-form{
+.auth-form {
   display: grid;
   grid-template-rows: auto auto;
-  
 }
 
-.form-label{
+.form-label {
   text-align: center;
+}
+.input-form {
+  min-width: 25vh;
+}
+
+.auth-background {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  min-height: 15vh;
+  min-width: 25vh;
+  padding: 5px;
+}
+.signup-container {
+  padding: 10px;
 }
