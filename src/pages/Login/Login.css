@@ -21,6 +21,8 @@
   background-color: whitesmoke;
   border: 1px solid var(--accent-color);
   padding: 4px;
+  margin: 5px;
+ 
 }
 
 .color-white {
@@ -34,4 +36,14 @@
 
 .text-gap-m{
     gap:5px
+}
+
+.auth-form{
+  display: grid;
+  grid-template-rows: auto auto;
+  
+}
+
+.form-label{
+  text-align: center;
 }

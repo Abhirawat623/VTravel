@@ -11,20 +11,22 @@ export const Login = () => {
           <h2 className="color-white">Login</h2>
           <form className="d-flex dir-col gap-m align-center">
             <div className="auth-form ml-s">
-              <label className="form-label color-white  ml-l">Username</label>
-              <input placeholder="Username" />
+              <label className="form-label color-white  ">Mobile Number</label>
+              <input placeholder="Mobile Number" />
             </div>
             <div className="auth-form">
               <label className="form-label color-white ml-l">Password</label>
               <input placeholder="*********" />
             </div>
             <div className="cta">
-              <button className="auth-login-btn gap-l .color-white">
+              <button className="auth-login-btn  ">
                 Login
               </button>
             </div>
           </form>
+          <button className="test-btn">Sign Up</button>
           <button className="test-btn">Login with Test Credentials</button>
+         
         </div>
       </div>
       <Footer />
