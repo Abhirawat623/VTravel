@@ -1,0 +1,1 @@
+export {signUpHandle} from './signup-service';
