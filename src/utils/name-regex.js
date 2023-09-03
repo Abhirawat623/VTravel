@@ -1,4 +1,4 @@
-export const validateName =(name)=>{
+export const validateName =(username)=>{
     const regex = /^[a-z]+$/i;
-    return regex.test(name)
+    return regex.test(username)
 }

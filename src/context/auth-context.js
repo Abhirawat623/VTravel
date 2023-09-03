@@ -2,7 +2,7 @@ import { createContext, useContext, useReducer } from "react";
 import { authReducer } from "../reducer/index";
 
 const initialValue = {
-  name: "",
+  username: "",
   number: "",
   email: "",
   password: "",
@@ -12,13 +12,13 @@ const initialValue = {
 const AuthContext = createContext(initialValue);
 
 const AuthProvider = ({ children }) => {
-  const [{ name, number, password, email,confirmPassword }, authDispatch] = useReducer(
+  const [{ username, number, password, email,confirmPassword }, authDispatch] = useReducer(
     authReducer,
     initialValue
   );
   return (
     <AuthContext.Provider
-      value={{ email, password, number, name,confirmPassword, authDispatch }}
+      value={{ email, password, number,username,confirmPassword, authDispatch }}
     >
       {children}
     </AuthContext.Provider>

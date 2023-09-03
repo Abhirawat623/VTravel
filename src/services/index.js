@@ -1,1 +1,1 @@
-export {signUpHandle} from './signup-service';
+export {signupHandle} from './signup-service';

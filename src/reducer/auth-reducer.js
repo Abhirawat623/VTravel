@@ -5,10 +5,10 @@ export const authReducer = (state, { type, payload }) => {
         ...state,
         number: payload,
       };
-    case "NAME":
+    case "USERNAME":
       return {
         ...state,
-        name: payload,
+        username: payload,
       };
     case "EMAIL":
       return { ...state, email: payload };
@@ -22,6 +22,14 @@ export const authReducer = (state, { type, payload }) => {
           ...state,
           confirmPassword: payload,
         };
+        case "CLEAR_SIGNUP":
+          return{...state,
+          username:"",
+        name:"",
+      password:"",
+    email:"",
+  confirmPassword:""}
+  
     default:
       return state;
   }
