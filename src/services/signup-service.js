@@ -5,7 +5,7 @@ import axios from "axios";
 export const signupHandle = async (username, number, email, password) => {
   try {
     const data = await axios.post(
-        "https://real-teal-basket-clam-wear.cyclic.cloud/auth/register",
+        "https://aware-foal-lingerie.cyclic.app/auth/register",
       {
         username: username,
         number: number,

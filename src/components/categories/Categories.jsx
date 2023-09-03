@@ -22,7 +22,7 @@ export const Categories = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          "https://real-teal-basket-clam-wear.cyclic.cloud/api/categories"
+          "https://aware-foal-lingerie.cyclic.app/api/categories"
         );
         // const categoriesToShow = data.slice(
         //   numberOfCategories + 8 > data.length

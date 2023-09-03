@@ -15,7 +15,7 @@ export const SingleHotelCard = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://real-teal-basket-clam-wear.cyclic.cloud/api/hotels/${id}`
+          `https://aware-foal-lingerie.cyclic.app/api/hotels/${id}`
         );
 
         setSingleHotel(data);
