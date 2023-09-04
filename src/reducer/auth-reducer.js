@@ -25,7 +25,7 @@ export const authReducer = (state, { type, payload }) => {
         case "CLEAR_SIGNUP":
           return{...state,
           username:"",
-        name:"",
+        number:"",
       password:"",
     email:"",
   confirmPassword:""}

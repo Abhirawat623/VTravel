@@ -2,11 +2,48 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "../Login/Login.css";
 import { Navbar, Footer } from "../../components/index";
-
-
+import { validateNumber,validatePassword } from "../../utils/index";
+import { LoginHandler, loginHandler } from "../../services";
+import {useAuth} from "../../context/index";
+let isNumberValid,isPasswordValid;
 export const Login = () => {
- 
+ const { authDispatch,password,number }= useAuth()
   
+ const handleNumberLogin=(event)=>{
+ isNumberValid = validateNumber(event.target.value)
+ if(isNumberValid){
+  authDispatch({
+    type:"NUMBER",
+    payload:event.target.value
+  })}
+  else{
+    console.log('Inavlid Number')
+  }
+ 
+ }
+
+ const handlePasswordLogin=(event)=>{
+  isPasswordValid = validatePassword(event.target.value)
+  if(isPasswordValid){
+   authDispatch({
+     type:"PASSWORD",
+     payload:event.target.value
+   })}
+   else{
+     console.log('Inavlid Password')
+   }
+  }
+ 
+  console.log(number,password)
+ const handleLogin=(event)=>{
+  event.preventDefault();
+  if(isNumberValid && isPasswordValid){
+    loginHandler(number,password)
+  }
+
+ }
+
+
   return (
     <Fragment>
       <Navbar />
@@ -22,15 +59,19 @@ export const Login = () => {
                 <input
                   className="input-form"
                   placeholder="Enter Mobile Number"
+                  onChange={handleNumberLogin}
+                  defaultValue={number}
+                  maxLength={10}
                 />
               </div>
               <div className="auth-form">
                 <label className="form-label color-white ml-l">Password</label>
-                <input className="input-form" placeholder="*********" />
+                <input className="input-form" placeholder="*********" 
+                onChange={handlePasswordLogin} defaultValue={password}   />
               </div>
             </span>
             <div className="cta">
-              <button className="auth-login-btn ">Login</button>
+              <button className="auth-login-btn" onClick={handleLogin}>Login</button>
             </div>
           </form>
          <Link to="/signup"> <button className="test-btn">Sign Up</button></Link>

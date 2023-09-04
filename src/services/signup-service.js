@@ -1,11 +1,9 @@
-
-
 import axios from "axios";
 
-export const signupHandle = async (username, number, email, password) => {
+export const signupHandler = async (username, number, email, password) => {
   try {
     const data = await axios.post(
-        "https://aware-foal-lingerie.cyclic.app/auth/register",
+        "https://aware-foal-lingerie.cyclic.app/api/auth/register",
       {
         username: username,
         number: number,
@@ -15,6 +13,7 @@ export const signupHandle = async (username, number, email, password) => {
     );
     console.log("Signed Up");
     console.log(data);
+    
   } catch (err) {
     console.log("error adding user to database");
   }

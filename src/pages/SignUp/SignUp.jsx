@@ -1,23 +1,30 @@
 import "../SignUp/SignUp.css";
+
+import {signupHandler} from "../../services/index"
+
 import { Navbar, Footer } from "../../components/index";
+
 import { useAuth } from "../../context/index";
+
 import {
   validateEmail,
   validateName,
   validateNumber,
   validatePassword,
 } from "../../utils/index";
-import { signupHandle } from "../../services/index";
+
+
+let isNameValid,
+isPasswordValid,
+isNumberValid,
+isEmailValid,
+isConfirmPasswordValid;
 
 export const SignUp = () => {
   const { email, password, username, number, confirmPassword, authDispatch } =
     useAuth();
 
-  let isNameValid,
-    isPasswordValid,
-    isNumberValid,
-    isEmailValid,
-    isConfirmPasswordValid;
+ 
 
   const handlePasswordSignupChange = (event) => {
     isPasswordValid = validatePassword(event.target.value);
@@ -73,12 +80,14 @@ export const SignUp = () => {
         payload: event.target.value,
       });
     } else {
-      console.log("Invalid Password");
+      console.log("Invalid Confirm Password");
     }
   };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    console.log(username, password, email, number,confirmPassword);
+
     if (
       isNumberValid &&
       isNameValid &&
@@ -86,13 +95,12 @@ export const SignUp = () => {
       isPasswordValid &&
       isConfirmPasswordValid
     ) {
-      signupHandle(username, number, email, password);
+      signupHandler(username, number, email, password);
     }
     authDispatch({
       type: "CLEAR_SIGNUP",
     });
   };
-  console.log(username, password, email, number);
 
   return (
     <>
