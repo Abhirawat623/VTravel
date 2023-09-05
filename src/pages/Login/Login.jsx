@@ -22,7 +22,6 @@ export const Login = () => {
   else{
     console.log('Inavlid Number')
   }
- 
  }
 
  const handlePasswordLogin=(event)=>{
@@ -37,28 +36,50 @@ export const Login = () => {
    }
   }
  
-  console.log(number,password)
- const handleLogin=(event)=>{
+  console.log(number,password);
+
+
+ const handleLogin= async (event)=>{
   event.preventDefault();
   if(isNumberValid && isPasswordValid){
-    loginHandler(number,password);
-   
-    const token= localStorage.getItem('token');
-    const name= localStorage.getItem('name');
+    const { accessToken, username } = await loginHandler(number, password);
+    authDispatch({
+      type: "SET_ACCESS_TOKEN",
+      payload: accessToken,
+    });
+    authDispatch({
+      type: "SET_USER_NAME",
+      payload: username,
+    });
 
-  if(token){
+ console.log(accessToken)
+    // const token= localStorage.getItem('token');
+    // const name= localStorage.getItem('name');
+
+  if(accessToken){
     navigate("/");
     authDispatch({
       type:"CLEAR_SIGNUP"
     })
   }
-
-
-
   }
-
  }
 
+ const handlleTestLoginButton= async (event)=>{
+  const {accessToken,username}= await loginHandler(
+    9123456789,
+    "Abcd@123"
+  );
+  authDispatch({
+    type: "SET_ACCESS_TOKEN",
+    payload: accessToken,
+  });
+  authDispatch({
+    type: "SET_USER_NAME",
+    payload: username,
+  });
+navigate("/")
+ }
 
   return (
     <Fragment>
@@ -91,7 +112,7 @@ export const Login = () => {
             </div>
           </form>
          <Link to="/signup"> <button className="test-btn">Sign Up</button></Link>
-          <button className="test-btn">Login with Test Credentials</button>
+          <button className="test-btn" onClick={handlleTestLoginButton}>Login with Test Credentials</button>
         </div>
       </div>
       <Footer />

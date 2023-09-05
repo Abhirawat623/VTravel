@@ -29,6 +29,23 @@ export const authReducer = (state, { type, payload }) => {
       password:"",
     email:"",
   confirmPassword:""}
+
+  case "SET_ACCESS_TOKEN":
+    return {
+      ...state,
+      accessToken: payload,
+    };
+  case "SET_USER_NAME":
+    return {
+      ...state,
+      name: payload,
+    };
+    case "LOGOUT_CLEAR":
+      return{
+        ...state,
+        accessToken:"",
+        name:""
+      }
   
     default:
       return state;

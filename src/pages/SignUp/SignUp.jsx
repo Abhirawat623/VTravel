@@ -6,6 +6,8 @@ import { Navbar, Footer } from "../../components/index";
 
 import { useAuth } from "../../context/index";
 
+import { useNavigate } from "react-router-dom";
+
 import {
   validateEmail,
   validateName,
@@ -21,6 +23,9 @@ isEmailValid,
 isConfirmPasswordValid;
 
 export const SignUp = () => {
+
+  const navigate= useNavigate();
+
   const { email, password, username, number, confirmPassword, authDispatch } =
     useAuth();
 
@@ -100,6 +105,7 @@ export const SignUp = () => {
     authDispatch({
       type: "CLEAR_SIGNUP",
     });
+    navigate("/login")
   };
 
   return (
