@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import "../Login/Login.css";
 import { Navbar, Footer } from "../../components/index";
 import { validateNumber,validatePassword } from "../../utils/index";
-import { LoginHandler, loginHandler } from "../../services";
+import {loginHandler } from "../../services";
 import {useAuth} from "../../context/index";
+import { useNavigate } from "react-router-dom";
 let isNumberValid,isPasswordValid;
+
 export const Login = () => {
+  const navigate= useNavigate();
  const { authDispatch,password,number }= useAuth()
   
  const handleNumberLogin=(event)=>{
@@ -38,7 +41,20 @@ export const Login = () => {
  const handleLogin=(event)=>{
   event.preventDefault();
   if(isNumberValid && isPasswordValid){
-    loginHandler(number,password)
+    loginHandler(number,password);
+   
+    const token= localStorage.getItem('token');
+    const name= localStorage.getItem('name');
+
+  if(token){
+    navigate("/");
+    authDispatch({
+      type:"CLEAR_SIGNUP"
+    })
+  }
+
+
+
   }
 
  }
