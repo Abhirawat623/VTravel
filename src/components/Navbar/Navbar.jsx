@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { useDate,useAuth} from "../../context/index";
+import { useDate, useAuth } from "../../context/index";
 export const Navbar = () => {
   //date dispatch
   const { dateDispatch } = useDate();
-  const {accessToken,authDispatch}= useAuth();
+  const { accessToken, authDispatch } = useAuth();
 
   const handleSearchClicked = () => {
     dateDispatch({
@@ -11,14 +11,12 @@ export const Navbar = () => {
     });
   };
 
-  const token = localStorage.getItem("token"); 
-  const handleLogoutClick =()=>{
-   
+  const token = localStorage.getItem("token");
+  const handleLogoutClick = () => {
     authDispatch({
-      type:"LOGOUT_CLEAR"
-    })
-  } 
-
+      type: "LOGOUT_CLEAR",
+    });
+  };
 
   return (
     <>
@@ -43,23 +41,31 @@ export const Navbar = () => {
           </div>
 
           {accessToken ? (
-            <Link className="navbar-items  d-flex dir-row" to="/login" onClick={handleLogoutClick}>
-              <li className="nav-icon">
-                <span className="material-icons-outlined cursor-pointer">
-                sentiment_dissatisfied
-                </span>
-              </li>
-              <li className="nav-icon">
-                <span className="material-icons-outlined cursor-pointer ">
-                  logout
-                </span>
-              </li>
-            </Link>
+            <div className="d-flex align-center gap-s icons">
+               <span className="nav-icon-heart">
+                    <span className="material-icons-outlined cursor-pointer ">
+                      favorite
+                    </span>
+                  </span>
+              <span>
+                <Link
+                  className="navbar-items  d-flex dir-row"
+                  to="/login"
+                  onClick={handleLogoutClick}
+                >
+                  <li className="nav-icon">
+                    <span className="material-icons-outlined cursor-pointer ">
+                      logout
+                    </span>
+                  </li>
+                </Link>
+              </span>
+            </div>
           ) : (
-            <Link className="navbar-items  d-flex dir-row" to="/login">
-              <li className="nav-icon">
+            <Link className="navbar-items  d-flex dir-row icons" to="/login">
+              <li className="nav-icon ">
                 <span className="material-icons-outlined cursor-pointer">
-                sentiment_satisfied_alt
+                  sentiment_satisfied_alt
                 </span>
               </li>
               <li className="nav-icon">

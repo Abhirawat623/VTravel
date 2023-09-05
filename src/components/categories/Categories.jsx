@@ -83,6 +83,7 @@ export const Categories = () => {
           filter_alt
         </span>  <span> Filter</span> 
       </button>
+     
       {/*     
 { numberOfCategories< categories.length 
 &&a

@@ -54,7 +54,7 @@ export const HotelCard = ({ items }) => {
         <div className="hotel-price">
           <span className="color-price">Rs.{price}</span>/Night
         </div>
-        <div className="wishlist-icon " onClick={handleWishlistClick}>
+        <div className={` ${isHotelInWishlist? 'favourite-selected': "wishlist-icon"}`} onClick={handleWishlistClick}>
           <span class="material-icons-outlined ">favorite</span>
         </div>
         <div className="star ">

@@ -31,8 +31,6 @@
   bottom: 2px;
   left: 5px;
   font-style: bold;
-
-
 }
 
 
@@ -56,7 +54,6 @@
 
 .address {
   font-weight: bolder;
-
 }
 
 .hotel-name {
@@ -75,7 +72,17 @@
   color: white;
   position: absolute;
   top:1rem;
-  right: 5px;
+  right: 7px;
   cursor: pointer;
-  scale: 1.1;
+  scale: 1.2;
+
+}
+
+.favourite-selected{
+  position: absolute;
+  top:1rem;
+  right: 7px;
+  cursor: pointer;
+  scale: 1.3;
+  color:red
 }

@@ -33,3 +33,21 @@
   color: white;
   border-radius: 50px;
 }
+
+.nav-icon-heart{
+color:red;
+
+}
+
+.logout-fav-container{
+ display: flex;
+ flex-direction: row;
+ align-content: center;
+ justify-content: center;
+
+ 
+}
+
+.icons{
+  scale: 1.2;
+}

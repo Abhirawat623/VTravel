@@ -11,7 +11,7 @@ function App() {
         element={<SingleHotel />}
       />
       <Route path="/hotels/:address" element={<ResultPage />} />
-      <Route path="/wishlists" element={<Wishlist />} />
+      <Route path="/wishlist" element={<Wishlist />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
     </Routes>
