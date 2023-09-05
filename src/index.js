@@ -6,6 +6,7 @@ import {
   DateProvider,
   FilterProvider,
   AuthProvider,
+  WishlistProvider
 } from "./context/index";
 import { BrowserRouter as Router } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -16,7 +17,9 @@ root.render(
         <DateProvider>
           <FilterProvider>
             <AuthProvider>
+              <WishlistProvider>
               <App />
+              </WishlistProvider>
             </AuthProvider>
           </FilterProvider>
         </DateProvider>

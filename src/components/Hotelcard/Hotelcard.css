@@ -1,7 +1,6 @@
 .hotel-container {
   height: 49vh;
   width: 46vh;
-
   border-radius: 5px;
   box-shadow: 2px 2px 4px 3px var(--shadow);
   position: relative;
@@ -10,7 +9,6 @@
 
 .hotel-image-container {
   height: 65%;
-
   width: 100%;
 }
 
@@ -33,6 +31,7 @@
   bottom: 2px;
   left: 5px;
   font-style: bold;
+
 
 }
 
@@ -77,4 +76,6 @@
   position: absolute;
   top:1rem;
   right: 5px;
+  cursor: pointer;
+  scale: 1.1;
 }

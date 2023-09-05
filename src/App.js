@@ -1,6 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Home, SingleHotel, ResultPage, Login, SignUp } from "./pages/index";
+import {Wishlist} from "../src/components/index";
 function App() {
   return (
     <Routes>
@@ -10,7 +11,7 @@ function App() {
         element={<SingleHotel />}
       />
       <Route path="/hotels/:address" element={<ResultPage />} />
-
+      <Route path="/wishlists" element={<Wishlist />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
     </Routes>
