@@ -42,11 +42,11 @@ export const Navbar = () => {
 
           {accessToken ? (
             <div className="d-flex align-center gap-s icons">
-               <span className="nav-icon-heart">
+               <Link className="nav-icon-heart" to="/wishlist">
                     <span className="material-icons-outlined cursor-pointer ">
                       favorite
                     </span>
-                  </span>
+                  </Link>
               <span>
                 <Link
                   className="navbar-items  d-flex dir-row"
@@ -63,11 +63,6 @@ export const Navbar = () => {
             </div>
           ) : (
             <Link className="navbar-items  d-flex dir-row icons" to="/login">
-              <li className="nav-icon ">
-                <span className="material-icons-outlined cursor-pointer">
-                  sentiment_satisfied_alt
-                </span>
-              </li>
               <li className="nav-icon">
                 <span className="material-icons-outlined cursor-pointer ">
                   login
