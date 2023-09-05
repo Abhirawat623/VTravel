@@ -10,6 +10,7 @@ function App() {
         element={<SingleHotel />}
       />
       <Route path="/hotels/:address" element={<ResultPage />} />
+
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
     </Routes>

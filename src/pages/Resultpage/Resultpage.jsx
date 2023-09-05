@@ -11,9 +11,8 @@ export const ResultPage = ({ items }) => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://real-teal-basket-clam-wear.cyclic.cloud/api/hotels?category=${hotelCategory}`
+          `https://aware-foal-lingerie.cyclic.app/api/hotels?category=${hotelCategory}`
         );
-
         setHotels(data);
       } catch (err) {
         console.log(err);
@@ -27,7 +26,6 @@ export const ResultPage = ({ items }) => {
       city.toLowerCase().includes(location.toLowerCase()) ||
       state.toLowerCase().includes(location.toLowerCase())
   );
-
   return (
     <Fragment>
       <Navbar />

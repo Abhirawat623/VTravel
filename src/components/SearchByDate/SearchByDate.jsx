@@ -14,7 +14,7 @@ export const SearchByDate = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://real-teal-basket-clam-wear.cyclic.cloud/api/hotels?category=${hotelCategory}`
+          `https://aware-foal-lingerie.cyclic.app/api/hotels?category=${hotelCategory}`
         );
 
         setHotels(data);
@@ -59,6 +59,9 @@ export const SearchByDate = () => {
       type: "LOCATION",
       payload: address,
     });
+    dateDispatch({
+      type: "OPEN_SEARCH_MODAL"
+    })
   };
 
   //focus of search-date bar
