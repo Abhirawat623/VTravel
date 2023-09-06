@@ -55,8 +55,8 @@ export const Login = () => {
  console.log(accessToken)
     // const token= localStorage.getItem('token');
     // const name= localStorage.getItem('name');
-
-  if(accessToken){
+const token = localStorage.getItem("token")
+  if(token){
     navigate("/");
     authDispatch({
       type:"CLEAR_SIGNUP"

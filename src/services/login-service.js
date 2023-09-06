@@ -8,7 +8,6 @@ export const loginHandler = async(number,password)=>{
         )
         console.log({accessToken,username});
         localStorage.setItem('token',accessToken);
-        localStorage.setItem('name',username)
         return {accessToken,username};
     }
     

@@ -7,3 +7,4 @@ export { useFilter,FilterProvider} from './filter-context';
 export {useAuth, AuthProvider} from  './auth-context';
 
 export { useWishlist ,WishlistProvider} from './wishlist-context';
+export { useHotel, HotelProvider } from "./hotel-context";

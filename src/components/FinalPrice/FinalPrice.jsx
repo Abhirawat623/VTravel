@@ -1,8 +1,10 @@
-import { useDate } from "../../context";
+import { useDate,useAuth } from "../../context";
 import { DateSelector } from "../index";
 import { useNavigate } from "react-router-dom";
 export const FinalPrice = ({ items }) => {
-  const { price, rating } = items;
+  const navigate = useNavigate();
+  const { price, rating,_id} = items;
+  const {accessToken}= useAuth();
   const { dateCheckIn, dateCheckOut, guests, dateDispatch } = useDate();
 
   const handleeGuestsChange = (event) => {
@@ -11,6 +13,13 @@ export const FinalPrice = ({ items }) => {
       payload: event.target.value,
     });
   };
+
+const handleReserveClick =()=>{
+if(accessToken){
+ navigate(`/confirm-booking/stay/:${_id}`)
+
+}
+}
 
   return (
     <div className="final-price-container gap-s">
@@ -50,7 +59,8 @@ export const FinalPrice = ({ items }) => {
 
         <button
           className="reserve-button pointer-cursor"
-        //   onClick={handleReserveClick}
+          onClick={handleReserveClick}
+          disabled={dateCheckIn && dateCheckOut && guests >0 ?false:true}
         >
           Reserve
         </button>
