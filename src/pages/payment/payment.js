@@ -84,20 +84,26 @@ export const Payment = () => {
           </div>
           <div className="d-flex dir-col gap-s">
             <h3 className="pay-app-heading">Pay with</h3>
+            <div className="tag">
+            Your booking is protected by{" "}
+            <strong >V TRAVEL</strong> 
+          </div>
             <div className="pay-app d-flex align-center "><h5>Razorpay</h5> 
             <span class="material-symbols-outlined">
 verified_user
 </span></div>
           </div>
+          
           <button
             className="confirm-button"
             // onClick={handleConfirmBookingClick}
           >
             Confirm Booking
           </button>
+          
         </div>
         <div className="final-details d-flex dir-col gap-l">
-          <div className="final-hotel d-flex gap-s">
+          <div className="final-hotel d-flex gap-s align-center">
             <img className="image" src={image} alt={name} />
             <div className="d-flex dir-col">
               <div className="d-flex dir-col grow-shrink-basis">
@@ -108,10 +114,7 @@ verified_user
               </div>
             </div>
           </div>
-          <div className="tag">
-            Your booking is protected by{" "}
-            <strong >V TRAVEL</strong> 
-          </div>
+         
           <div className="price-detail-container">
             <div className="price-distribution d-flex dir-col">
               <h3 className="pay-app-heading">Price Details</h3>
