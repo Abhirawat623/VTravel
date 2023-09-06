@@ -1,9 +1,14 @@
-.head{
-    font-style: none;
-    text-decoration-color: none;
-    list-style: none;
+.heading{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 5rem;
 }
-
+.link-header{
+    list-style: none;
+    text-decoration: none;
+    color: var(--accent-color);
+}
 .border{
     border: 2px solid var(--accent-color);
 }
@@ -12,7 +17,82 @@
     grid-template-columns: 1fr 1fr;
     gap:2rem;
     margin: 5rem;
+    background-color:rgb(252, 252, 252);
 }
 .final-details-container{
     min-width: 70vh;
+}
+.image{
+    height: 35vh;
+    width: 35vh;
+    border-radius: 5px;
+}
+
+.final-details{
+    padding: 1rem;
+}
+
+.final-details-container{
+    padding: 1rem;
+}
+
+.dates-and-guests, .price-distribution{
+    border:2px solid var(--shadow);
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.tag{
+    border:1px solid var(--shadow);
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.confirm-button{
+    border:1px solid var(--shadow);
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+.pay-app{
+    border: 2px solid var(--shadow);
+    background-color: rgb(255, 224, 48);
+    color: black;
+    text-align: center;
+    justify-content: center;
+}
+
+.pay-app-heading{
+    border: 2px solid var(--shadow);
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.pay-app-heading-2{
+    border: 2px solid var(--shadow);
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+.pay-components{
+    text-align: center;
+}
+.final-hotel {
+    border: 2px solid var(--accent-color);
+    padding: 2rem;
+    border-radius:5px ;
+}
+
+.final-hotel-name{
+  font-size: 1.8rem;
+    text-align: center;
+    font-weight: bolder;
+}
+.final-hotel-address{
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: bolder;
 }

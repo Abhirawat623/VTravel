@@ -1,17 +1,20 @@
 import "../payment/payment.css";
 import { useParams,useNavigate,Link} from "react-router-dom";
 import { useHotel,useDate } from "../../context/index";
-import { useState,useEffect,Fragment } from "react";
+import { useState,useEffect, Fragment } from "react";
+import {Navbar,Footer} from "../../components/index";
+
 import axios from "axios";
 
 export const Payment = () => {
 
 
-
-
-
-    const params = useParams();
-    const { id } = params;
+    const { id } = useParams();
+ console.log(id)
+    //for singleHotteldata
+  
+    const [singleHotel, setSingleHotel] = useState({});
+  
   
     const navigate = useNavigate();
   
@@ -24,21 +27,21 @@ export const Payment = () => {
         ? (dateCheckOut.getTime() - dateCheckIn.getTime()) / (1000 * 3600 * 24)
         : 0;
   
-    const [singleHotel, setSingleHotel] = useState({});
+   
   
-    useEffect(() => {
-      (async () => {
-        try {
-          const { data } = await axios.get(
-            `https://aware-foal-lingerie.cyclic.app/api/hotels/${id}`
-          );
-          console.log(data);
-          setSingleHotel(data);
-        } catch (err) {
-          console.log(err);
-        }
-      })();
-    }, [id]);
+        useEffect(() => {
+            (async () => {
+              try {
+                const { data } = await axios.get(
+                  `https://aware-foal-lingerie.cyclic.app/api/hotels/${id}`
+                );
+                setSingleHotel(data);
+                console.log(singleHotel);
+              } catch (err) {
+                console.log(err);
+              }
+            })();
+          }, [id]);
   
     const { image, name, address, state, rating, price } = singleHotel;
   
@@ -47,21 +50,22 @@ export const Payment = () => {
 
   return (
     <Fragment>
+      <Navbar/>
       <header className="heading">
       
-          <Link to="/">
-            <h2 className="head">Back to Home &#127750;</h2> 
+          <Link to="/" className="link-header">
+            <h2 >Back to Home &#127750;</h2> 
           </Link>
         
       </header>
-      <main className="payment-page d-flex justify-center dir-row border">
+      <main className="payment-page d-flex justify-center dir-row border  gap-m">
         <div className="final-details-container d-flex dir-col gap-m border">
-          <h2>Trip Details</h2>
+          <h2 className="pay-app-heading">Trip Details</h2>
           <div className="dates-and-guests d-flex dir-col gap-m">
-            <h3>Your Trip</h3>
+            <h3 className="pay-components">Your Trip</h3>
             <div>
-              <p>Dates</p>
-              <span>
+              <p className="pay-app-heading-2">Dates</p>
+              <div className="pay-components">
                 {dateCheckIn.toLocaleDateString("en-US", {
                   day: "numeric",
                   month: "short",
@@ -71,38 +75,35 @@ export const Payment = () => {
                   day: "numeric",
                   month: "short",
                 })}
-              </span>
+              </div>
             </div>
             <div>
-              <p>Guests</p>
-              <span>{guests} Guests</span>
+              <p className="pay-app-heading-2">Guests</p>
+              <div className="pay-components" >{guests} Guests</div>
             </div>
           </div>
           <div className="d-flex dir-col gap-s">
-            <h3>Pay with</h3>
-            <div>Razorpay</div>
+            <h3 className="pay-app-heading">Pay with</h3>
+            <div className="pay-app d-flex align-center "><h5>Razorpay</h5> 
+            <span class="material-symbols-outlined">
+verified_user
+</span></div>
           </div>
           <button
-            className="button"
+            className="confirm-button"
             // onClick={handleConfirmBookingClick}
           >
             Confirm Booking
           </button>
         </div>
         <div className="final-details d-flex dir-col gap-l">
-          <div className="d-flex gap-s">
+          <div className="final-hotel d-flex gap-s">
             <img className="image" src={image} alt={name} />
             <div className="d-flex dir-col">
               <div className="d-flex dir-col grow-shrink-basis">
-                <span>{name}</span>
-                <span>
+                <div className="final-hotel-name">{name}</div>
+                <span className="final-hotel-address" >
                   {address}, {state}
-                </span>
-              </div>
-              <div className="rating-container">
-                <span className="rating d-flex align-center">
-                  <span className="material-icons-outlined">star</span>
-                  <span>{rating}</span>
                 </span>
               </div>
             </div>
@@ -113,7 +114,7 @@ export const Payment = () => {
           </div>
           <div className="price-detail-container">
             <div className="price-distribution d-flex dir-col">
-              <h3>Price Details</h3>
+              <h3 className="pay-app-heading">Price Details</h3>
               <div className="final-price d-flex align-center space-between">
                 <span className="span">
                   Rs. {price} x {numberOfNights} nights
@@ -132,6 +133,7 @@ export const Payment = () => {
           </div>
         </div>
       </main>
+      <Footer/>
     </Fragment>
   );
 };

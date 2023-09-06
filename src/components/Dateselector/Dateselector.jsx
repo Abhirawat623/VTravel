@@ -16,6 +16,8 @@ export const DateSelector = ({ checkInType}) => {
     });
   };
 
+  
+
   // console.log({dateCheckIn, dateCheckOut})
 
   const handleLocatioListClose=()=>{
@@ -24,7 +26,6 @@ export const DateSelector = ({ checkInType}) => {
     payload:islocationListOpen
   })
   }
-
 
   return (
     <DatePicker

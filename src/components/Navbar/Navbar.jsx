@@ -13,9 +13,12 @@ export const Navbar = () => {
 
   const token = localStorage.getItem("token");
   const handleLogoutClick = () => {
+    if(token){
     authDispatch({
       type: "LOGOUT_CLEAR",
     });
+ localStorage.removeItem("token");
+  }
   };
 
   return (
@@ -40,8 +43,8 @@ export const Navbar = () => {
             <span className="material-icons-outlined searcher">search</span>
           </div>
 
-          {accessToken ? (
-            <div className="d-flex align-center gap-s icons">
+          {token ? (
+            <div className="d-flex align-center icons">
                <Link className="nav-icon-heart" to="/wishlist">
                     <span className="material-icons-outlined cursor-pointer ">
                       favorite

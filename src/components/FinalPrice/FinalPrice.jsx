@@ -3,7 +3,7 @@ import { DateSelector } from "../index";
 import { useNavigate } from "react-router-dom";
 export const FinalPrice = ({ items }) => {
   const navigate = useNavigate();
-  const { price, rating,_id} = items;
+  const { price, rating, _id} = items;
   const {accessToken}= useAuth();
   const { dateCheckIn, dateCheckOut, guests, dateDispatch } = useDate();
 
@@ -15,9 +15,10 @@ export const FinalPrice = ({ items }) => {
   };
 
 const handleReserveClick =()=>{
-if(accessToken){
- navigate(`/confirm-booking/stay/:${_id}`)
-
+  const token=  localStorage.getItem("token")
+if(token){
+ navigate(`/confirm-booking/stay/${_id}`)
+console.log(_id)
 }
 }
 
