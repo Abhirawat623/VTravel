@@ -47,6 +47,55 @@ export const Payment = () => {
   
     const totalPayableAmount = price * numberOfNights + 150;
 
+    const loadScript =(source)=>{
+      return new Promise( resolve =>{
+        const script = document.createElement("script");
+        script.src = source;
+        script.onload =()=> resolve(true);
+        script.onerror =()=> resolve(false);
+        document.body.appendChild(script);
+      });
+    }
+
+
+   const handleConfirmBookingClick = async ()=>{
+  const response = await loadScript ("https://checkout.razorpay.com/v1/checkout.js");
+ 
+  if(!response){
+    console.log({message: "RAZORPAY SDK FAILED TO LOAD"});
+  }
+
+  const options = {
+    key: "rzp_test_96PY5u7lK93BKN",
+    amount: totalPayableAmount * 100,
+    currency: "INR",
+    name: "V TRAVEL",
+    email: "abhirawat623@gmail.com",
+    contact: "987654321",
+    description: "Thanks for booking with us",
+
+  handler: ({payment_id})=>{
+    navigate("/order-summary")
+  },
+  prefill:{
+    name: "Abhishek Rawat",
+    email: "abhirawat623@gmail.com",
+    contact:"987654321"
+  }
+  }
+
+  const paymentObject = new window.Razorpay(options);
+  paymentObject.open();
+   }
+
+
+
+
+
+
+
+
+
 
   return (
     <Fragment>
@@ -96,7 +145,7 @@ verified_user
           
           <button
             className="confirm-button"
-            // onClick={handleConfirmBookingClick}
+            onClick={handleConfirmBookingClick}
           >
             Confirm Booking
           </button>

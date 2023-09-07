@@ -51,11 +51,12 @@
 }
 
 .confirm-button{
-    border:1px solid var(--shadow);
+    border:2px solid yellowgreen;
     background-color: green;
     color: white;
     border-radius: 5px;
     text-align: center;
+    height: 3rem;
 }
 .pay-app{
     border: 2px solid var(--shadow);
