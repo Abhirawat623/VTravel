@@ -7,9 +7,10 @@ import {
   Footer,
   SearchByDate,
   Filter,
+  Alert
 } from "../../components/index";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useCategory, useDate, useFilter } from "../../context/index";
+import { useCategory, useDate, useFilter,useAlert } from "../../context/index";
 import {
   getHotelsByPrice,
   getHotelsByRoomsAndBeds,
@@ -29,7 +30,9 @@ export const Home = () => {
     vTravelRating,
     propertyType,
   } = useFilter();
+  //alert
 
+  const {alert} = useAlert();
   //for Infinite Scrolls
   const [hotels, setHotels] = useState([]);
   const [hasMore, setHasMore] = useState(true);
@@ -123,7 +126,7 @@ export const Home = () => {
         ) : (
           <></>
         )}
-
+             {alert.open && <Alert />}
         <Footer />
       </div>
     </Fragment>

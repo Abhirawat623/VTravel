@@ -8,3 +8,4 @@ export {DateSelector} from './Dateselector/Dateselector';
 export {FinalPrice} from './FinalPrice/FinalPrice';
 export {Filter} from "./Filter/Filter";
 export {Wishlist} from './wishlist/wishlist';
+export {Alert} from './alert/alert';

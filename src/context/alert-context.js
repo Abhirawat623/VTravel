@@ -7,7 +7,7 @@ const AlertProvider = ({children})=>{
     const [alert,setAlert] = useState(
         {
             open: false,
-            message: "",
+            message:"",
             type: "success"
         }
     )

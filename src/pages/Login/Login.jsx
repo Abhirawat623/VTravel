@@ -4,7 +4,7 @@ import "../Login/Login.css";
 import { Navbar, Footer } from "../../components/index";
 import { validateNumber,validatePassword } from "../../utils/index";
 import {loginHandler } from "../../services";
-import {useAuth,useAlert} from "../../context/index";
+import {useAuth, useAlert} from "../../context/index";
 import { useNavigate } from "react-router-dom";
 let isNumberValid,isPasswordValid;
 
@@ -44,7 +44,7 @@ export const Login = () => {
  const handleLogin= async (event)=>{
   event.preventDefault();
   if(isNumberValid && isPasswordValid){
-    const { accessToken, username } = await loginHandler(number, password);
+    const { accessToken, username } = await loginHandler(number, password,setAlert);
     authDispatch({
       type: "SET_ACCESS_TOKEN",
       payload: accessToken,
@@ -70,7 +70,8 @@ const token = localStorage.getItem("token")
  const handlleTestLoginButton= async (event)=>{
   const {accessToken,username}= await loginHandler(
     9123456789,
-    "Abcd@123",setAlert
+    "Abcd@123",
+    setAlert
   );
   authDispatch({
     type: "SET_ACCESS_TOKEN",
