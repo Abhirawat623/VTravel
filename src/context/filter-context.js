@@ -3,7 +3,7 @@ import { filterReducer } from "../reducer/index";
 
 const initialValue = {
     isFilterModalOpen: false,
-    priceRange:[300,2000],
+    priceRange:[300,25000],
     isCancellable:true,
     propertyType:"Any",
     noOfBeds: "Any",

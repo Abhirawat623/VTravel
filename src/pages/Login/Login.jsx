@@ -4,7 +4,7 @@ import "../Login/Login.css";
 import { Navbar, Footer } from "../../components/index";
 import { validateNumber,validatePassword } from "../../utils/index";
 import {loginHandler } from "../../services";
-import {useAuth} from "../../context/index";
+import {useAuth,useAlert} from "../../context/index";
 import { useNavigate } from "react-router-dom";
 let isNumberValid,isPasswordValid;
 
@@ -12,6 +12,8 @@ export const Login = () => {
   const navigate= useNavigate();
  const { authDispatch,password,number }= useAuth()
   
+ const { setAlert }= useAlert();
+
  const handleNumberLogin=(event)=>{
  isNumberValid = validateNumber(event.target.value)
  if(isNumberValid){
@@ -68,7 +70,7 @@ const token = localStorage.getItem("token")
  const handlleTestLoginButton= async (event)=>{
   const {accessToken,username}= await loginHandler(
     9123456789,
-    "Abcd@123"
+    "Abcd@123",setAlert
   );
   authDispatch({
     type: "SET_ACCESS_TOKEN",

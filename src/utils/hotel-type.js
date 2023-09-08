@@ -21,7 +21,7 @@ export const getHotelsByType = (hotels,hotelType)=>{
     if(hotelType=== "Any")
     return hotels;
 
-    const filteredHotels = hotels.map((hotel)=>(
+    const filteredHotels = hotels.filter((hotel)=>(
         hotel.propertyType === hotelType));
         return filteredHotels;
 }

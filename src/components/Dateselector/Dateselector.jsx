@@ -35,6 +35,7 @@ export const DateSelector = ({ checkInType}) => {
       closeOnScroll={true}
       placeholderText="Select Date"
       onFocus={handleLocatioListClose}
+      minDate={new Date()}
      
       
     />
