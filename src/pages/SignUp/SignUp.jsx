@@ -4,7 +4,7 @@ import {signupHandler} from "../../services/index"
 
 import { Navbar, Footer } from "../../components/index";
 
-import { useAuth } from "../../context/index";
+import { useAuth,useAlert} from "../../context/index";
 
 import { useNavigate } from "react-router-dom";
 
@@ -25,7 +25,7 @@ isConfirmPasswordValid;
 export const SignUp = () => {
 
   const navigate= useNavigate();
-
+const {setAlert} = useAlert()
   const { email, password, username, number, confirmPassword, authDispatch } =
     useAuth();
 
@@ -100,13 +100,18 @@ export const SignUp = () => {
       isPasswordValid &&
       isConfirmPasswordValid
     ) {
-      signupHandler(username, number, email, password);
+      signupHandler(username, number, email, password,setAlert);
+    }
+    else{
+      alert("Please fill the form properly")
     }
     authDispatch({
       type: "CLEAR_SIGNUP",
     });
     navigate("/login")
+    
   };
+ 
 
   return (
     <>
@@ -177,7 +182,7 @@ export const SignUp = () => {
                 />
               </div>
             </span>
-            <button className="auth-login-btn ">Submit</button>
+            <button className="auth-login-btn ">Create Account</button>
           </form>
         </div>
       </div>

@@ -112,6 +112,9 @@ export const SearchByDate = () => {
             placeholder="Add guests"
             onChange={handleGuestsChange}
             value={guests}
+            type="number"
+           min={1}
+           max={4}
           />
         </div>
         <div

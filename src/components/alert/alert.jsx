@@ -4,9 +4,11 @@ import { useAlert } from '../../context/index';
 
 
 export const Alert = ()  => {
-  const {alert, setAlert} = useAlert()
+
+  const {alert, setAlert} = useAlert();
 
   const handleClose = (event, reason) => {
+    
     if (reason === 'clickaway') {
       return;
     }

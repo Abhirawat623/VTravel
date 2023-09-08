@@ -1,10 +1,10 @@
-import { useDate,useAuth } from "../../context";
-import { DateSelector } from "../index";
+import { useDate,useAlert } from "../../context";
+import { DateSelector,Alert } from "../index";
 import { useNavigate } from "react-router-dom";
 export const FinalPrice = ({ items }) => {
   const navigate = useNavigate();
   const { price, rating, _id} = items;
-  const {accessToken}= useAuth();
+ const {setAlert,alert}= useAlert;
   const { dateCheckIn, dateCheckOut, guests, dateDispatch } = useDate();
 
   const handleeGuestsChange = (event) => {
@@ -20,6 +20,7 @@ if(token){
  navigate(`/confirm-booking/stay/${_id}`)
 console.log(_id)
 }
+
 }
 
   return (
@@ -51,6 +52,8 @@ console.log(_id)
                 placeholder="Add Guests"
                 value={guests}
                 onChange={handleeGuestsChange}
+                min={1}
+                max={4}
               />
             ) : (
               <span>{guests} guests</span>
@@ -80,9 +83,6 @@ console.log(_id)
           <span className="span text-bold ">Rs. {price * 2 + 200}</span>
         </div>  
         </div>
-    
-     
-
 
     </div>
   );

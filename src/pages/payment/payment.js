@@ -75,7 +75,7 @@ export const Payment = () => {
     description: "Thanks for booking with us",
 
   handler: ({payment_id})=>{
-    navigate("/order-summary")
+    navigate("/")
   },
   prefill:{
     name: "Abhishek Rawat",

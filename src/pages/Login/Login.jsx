@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "../Login/Login.css";
-import { Navbar, Footer } from "../../components/index";
+import { Navbar, Footer,Alert} from "../../components/index";
 import { validateNumber,validatePassword } from "../../utils/index";
 import {loginHandler } from "../../services";
 import {useAuth, useAlert} from "../../context/index";
@@ -9,10 +9,11 @@ import { useNavigate } from "react-router-dom";
 let isNumberValid,isPasswordValid;
 
 export const Login = () => {
+
   const navigate= useNavigate();
  const { authDispatch,password,number }= useAuth()
   
- const { setAlert }= useAlert();
+ const {alert, setAlert }= useAlert();
 
  const handleNumberLogin=(event)=>{
  isNumberValid = validateNumber(event.target.value)
@@ -53,6 +54,7 @@ export const Login = () => {
       type: "SET_USER_NAME",
       payload: username,
     });
+   
 
  console.log(accessToken)
     // const token= localStorage.getItem('token');
@@ -87,6 +89,7 @@ navigate("/")
   return (
     <Fragment>
       <Navbar />
+  
       <div className=" auth-login-container signup-container">
         <div className="auth-login d-flex justify-center dir-col align-center">
           <h2 className="color-white">Login</h2>
@@ -98,7 +101,7 @@ navigate("/")
                 </label>
                 <input
                   className="input-form"
-                  placeholder="Enter Mobile Number"
+                  placeholder="Enter Registered Mobile Number"
                   onChange={handleNumberLogin}
                   defaultValue={number}
                   maxLength={10}
@@ -117,6 +120,7 @@ navigate("/")
          <Link to="/signup"> <button className="test-btn">Sign Up</button></Link>
           <button className="test-btn" onClick={handlleTestLoginButton}>Login with Test Credentials</button>
         </div>
+        {alert.open && <Alert />}
       </div>
       <Footer />
     </Fragment>
