@@ -89,6 +89,18 @@ export const filterReducer = (state, { type, payload }) => {
         noOfBathrooms:
           (payload === "Any" / payload) === "5+" ? 5 : Number(payload),
       };
+      case "CLEAR_ALL":
+        return {
+          ...state,
+          priceRange: [300, 20000],
+          noOfBathrooms: "Any",
+          noOfBedrooms: "Any",
+          noOfBeds: "Any",
+          propertyType: "Any",
+          vTravelRating: 1,
+          isCancellable: true,
+        };
+  
     default:
       return state;
   }

@@ -110,7 +110,7 @@ navigate("/")
               <div className="auth-form">
                 <label className="form-label color-white ml-l">Password</label>
                 <input className="input-form" placeholder="*********" 
-                onChange={handlePasswordLogin} defaultValue={password}   />
+                onChange={handlePasswordLogin} defaultValue={password}  type="password" />
               </div>
             </span>
             <div className="cta">

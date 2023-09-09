@@ -129,7 +129,7 @@ const {setAlert} = useAlert()
                   <label className="form-label color-white ml-l">Name*</label>
                   <input
                     className="input-form"
-                    placeholder="Enter Name"
+                    placeholder="Enter Full Name"
                     required
                     defaultValue={username}
                     onChange={handleNameSignupChange}
@@ -139,7 +139,7 @@ const {setAlert} = useAlert()
                   <label className="form-label color-white ml-l">E-mail*</label>
                   <input
                     className="input-form"
-                    placeholder="Enter E-mail"
+                    placeholder="Enter a valid E-mail"
                     required
                     defaultValue={email}
                     onChange={handleEmailSignupChange}
@@ -151,8 +151,9 @@ const {setAlert} = useAlert()
                   </label>
                   <input
                     className="input-form"
-                    placeholder="*********"
+                    placeholder="Must be 8 letters including caps letter & special character"
                     required
+                    type="password"
                     onChange={handlePasswordSignupChange}
                     defaultValue={password}
                   />
@@ -163,8 +164,9 @@ const {setAlert} = useAlert()
                   </label>
                   <input
                     className="input-form"
-                    placeholder="*********"
+                    placeholder="Must be 8 letters including caps latter & special character"
                     required
+                    type="password"
                     onChange={handleConfirmPasswordSignupChange}
                     defaultValue={confirmPassword}
                   />

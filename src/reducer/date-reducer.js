@@ -31,6 +31,14 @@ export const dateReducer = (state, { type, payload }) => {
     case "ClOSE_LOCATION_LIST":
       return { ...state,
         islocationListOpen: false };
+
+        case "CLEAR_INPUTS":
+          return {
+            ...state,
+            dateCheckIn: null,
+            dateCheckOut: null,
+            guests: 0
+          }
     default:
       return state;
   }

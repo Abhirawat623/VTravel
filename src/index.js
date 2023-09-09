@@ -8,6 +8,7 @@ import {
   AuthProvider,
   WishlistProvider,
   AlertProvider,
+  HotelProvider
 } from "./context/index";
 import { BrowserRouter as Router } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -19,9 +20,11 @@ root.render(
           <FilterProvider>
             <AuthProvider>
               <WishlistProvider>
+                <HotelProvider>
                 <AlertProvider>
                   <App />
                 </AlertProvider>
+                </HotelProvider>
               </WishlistProvider>
             </AuthProvider>
           </FilterProvider>

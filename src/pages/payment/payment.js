@@ -1,111 +1,99 @@
 import "../payment/payment.css";
-import { useParams,useNavigate,Link} from "react-router-dom";
-import { useHotel,useDate } from "../../context/index";
-import { useState,useEffect, Fragment } from "react";
-import {Navbar,Footer} from "../../components/index";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { useHotel, useDate } from "../../context/index";
+import { useState, useEffect, Fragment } from "react";
+import { Navbar, Footer } from "../../components/index";
 
 import axios from "axios";
 
 export const Payment = () => {
+  const { id } = useParams();
+  console.log(id);
+  //for singleHotteldata
 
+  const [singleHotel, setSingleHotel] = useState({});
 
-    const { id } = useParams();
- console.log(id)
-    //for singleHotteldata
-  
-    const [singleHotel, setSingleHotel] = useState({});
-  
-  
-    const navigate = useNavigate();
-  
-    const { guests, dateCheckIn, dateCheckOut } = useDate();
-  
-    const { setHotel } = useHotel();
-  
-    const numberOfNights =
-      dateCheckIn && dateCheckOut
-        ? (dateCheckOut.getTime() - dateCheckIn.getTime()) / (1000 * 3600 * 24)
-        : 0;
-  
-   
-  
-        useEffect(() => {
-            (async () => {
-              try {
-                const { data } = await axios.get(
-                  `https://aware-foal-lingerie.cyclic.app/api/hotels/${id}`
-                );
-                setSingleHotel(data);
-                console.log(singleHotel);
-              } catch (err) {
-                console.log(err);
-              }
-            })();
-          }, [id]);
-  
-    const { image, name, address, state, rating, price } = singleHotel;
-  
-    const totalPayableAmount = price * numberOfNights + 150;
+  const navigate = useNavigate();
 
-    const loadScript =(source)=>{
-      return new Promise( resolve =>{
-        const script = document.createElement("script");
-        script.src = source;
-        script.onload =()=> resolve(true);
-        script.onerror =()=> resolve(false);
-        document.body.appendChild(script);
-      });
+  const { guests, dateCheckIn, dateCheckOut } = useDate();
+
+  const { setHotel } = useHotel();
+
+  const numberOfNights =
+    dateCheckIn && dateCheckOut
+      ? (dateCheckOut.getTime() - dateCheckIn.getTime()) / (1000 * 3600 * 24)
+      : 0;
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await axios.get(
+          `https://aware-foal-lingerie.cyclic.app/api/hotels/${id}`
+        );
+        setSingleHotel(data);
+
+        setHotel(data);
+
+        console.log(singleHotel);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [id]);
+
+  const { image, name, address, state, price } = singleHotel;
+
+  const totalPayableAmount = price * numberOfNights + 150;
+
+  const loadScript = (source) => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = source;
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+  };
+
+  const handleConfirmBookingClick = async () => {
+    const response = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+
+    if (!response) {
+      console.log({ message: "RAZORPAY SDK FAILED TO LOAD" });
     }
 
+    const options = {
+      key: "rzp_test_96PY5u7lK93BKN",
+      amount: totalPayableAmount * 100,
+      currency: "INR",
+      name: "V TRAVEL",
+      email: "abhirawat623@gmail.com",
+      contact: "987654321",
+      description: "Thanks for booking with us",
 
-   const handleConfirmBookingClick = async ()=>{
-  const response = await loadScript ("https://checkout.razorpay.com/v1/checkout.js");
- 
-  if(!response){
-    console.log({message: "RAZORPAY SDK FAILED TO LOAD"});
-  }
+      handler: ({ payment_id }) => {
+        navigate("/orderSummary");
+      },
+      prefill: {
+        name: "Abhishek Rawat",
+        email: "abhirawat623@gmail.com",
+        contact: "987654321",
+      },
+    };
 
-  const options = {
-    key: "rzp_test_96PY5u7lK93BKN",
-    amount: totalPayableAmount * 100,
-    currency: "INR",
-    name: "V TRAVEL",
-    email: "abhirawat623@gmail.com",
-    contact: "987654321",
-    description: "Thanks for booking with us",
-
-  handler: ({payment_id})=>{
-    navigate("/")
-  },
-  prefill:{
-    name: "Abhishek Rawat",
-    email: "abhirawat623@gmail.com",
-    contact:"987654321"
-  }
-  }
-
-  const paymentObject = new window.Razorpay(options);
-  paymentObject.open();
-   }
-
-
-
-
-
-
-
-
-
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
 
   return (
     <Fragment>
-      <Navbar/>
+      <Navbar />
       <header className="heading">
-      
-          <Link to="/" className="link-header">
-            <h2 >Back to Home &#127750;</h2> 
-          </Link>
-        
+        <Link to="/" className="link-header">
+          <h2>Back to Home &#127750;</h2>
+        </Link>
       </header>
       <main className="payment-page d-flex justify-center dir-row border  gap-m">
         <div className="final-details-container d-flex dir-col gap-m border">
@@ -128,28 +116,26 @@ export const Payment = () => {
             </div>
             <div>
               <p className="pay-app-heading-2">Guests</p>
-              <div className="pay-components" >{guests} Guests</div>
+              <div className="pay-components">{guests} Guests</div>
             </div>
           </div>
           <div className="d-flex dir-col gap-s">
             <h3 className="pay-app-heading">Pay with</h3>
             <div className="tag">
-            Your booking is protected by{" "}
-            <strong >V TRAVEL</strong> 
+              Your booking is protected by <strong>V TRAVEL</strong>
+            </div>
+            <div className="pay-app d-flex align-center ">
+              <h5>Razorpay</h5>
+              <span class="material-symbols-outlined">verified_user</span>
+            </div>
           </div>
-            <div className="pay-app d-flex align-center "><h5>Razorpay</h5> 
-            <span class="material-symbols-outlined">
-verified_user
-</span></div>
-          </div>
-          
+
           <button
             className="confirm-button"
             onClick={handleConfirmBookingClick}
           >
             Confirm Booking
           </button>
-          
         </div>
         <div className="final-details d-flex dir-col gap-l">
           <div className="final-hotel d-flex gap-s align-center">
@@ -157,13 +143,13 @@ verified_user
             <div className="d-flex dir-col">
               <div className="d-flex dir-col grow-shrink-basis">
                 <div className="final-hotel-name">{name}</div>
-                <span className="final-hotel-address" >
+                <span className="final-hotel-address">
                   {address}, {state}
                 </span>
               </div>
             </div>
           </div>
-         
+
           <div className="price-detail-container">
             <div className="price-distribution d-flex dir-col">
               <h3 className="pay-app-heading">Price Details</h3>
@@ -185,7 +171,7 @@ verified_user
           </div>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </Fragment>
   );
 };
