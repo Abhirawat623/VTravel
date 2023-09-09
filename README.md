@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# V TRAVEL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![nav-logo](https://github.com/Abhirawat623/VTravel/assets/131130116/dcb304ae-9bbc-4bea-a32f-8b5826cee6f4)
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+# About
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+V Travel App suggests you the best stays and enjoy your trip with range of best and budget prices, add your favourite hotel to wishlist can search your hotel category wise also provides gateway for instant payment to book your hotel.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# List of features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features of this version:
+- Single page efficient App
+- Backend data using express NodeJs
+- Auth SignUp,Login,Test credential
+- React Date Component
+- RazorPay Gateway (Test Mode)
+- Database handled in MongoDB
+- React Context and Reducer
+- InfiniteScroll
+- Carousel dor categories
+- Dropdown List and Modal
 
-### `npm run build`
+## Login
+- Form Validation using Regex
+- AccessToken Validation
+- Only Registered Users in MongoDB
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## SignUp
+- Form Validation using Regex
+- same Mobile number can't signup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## React Router
+- Categories data from MongoDB
+- Hotels arranged categorywise
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tech Stack
 
-### `npm run eject`
+- ReactJs
+- HTML/CSS
+- Express-Node.Js
+- MongoDB
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Author
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   Abhishek Rawat
+-   [GitHub](https://github.com/Abhirawat623)
+-   [LinkedIn](https://www.linkedin.com/in/abhishek-rawat-598151240/)
+-   [Twitter](https://twitter.com/Abhishekrwt38)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Live Link
+# Front End
+- https://v-travel.vercel.app/
+# Back End
+- https://aware-foal-lingerie.cyclic.app/api/hotels
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Run Locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Clone the project by adding the following command in the terminal.
+Make sure your have git installed and added to path.
 
-### Code Splitting
+```bash
+   https://github.com/Abhirawat623/VTravel.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Go to the project directory
 
-### Analyzing the Bundle Size
+```bash
+  cd vTravel
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Install dependencies
 
-### Making a Progressive Web App
+```bash
+  npm i
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Start the server
 
-### Advanced Configuration
+```bash
+  npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Screenshot
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![1](https://github.com/Abhirawat623/VTravel/assets/131130116/c4ee418f-c1fd-4ced-b3e9-d80574331b5c)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![3](https://github.com/Abhirawat623/VTravel/assets/131130116/9db4e97a-ec23-4f58-a125-5f5088e8d57b)
+
+
+![4](https://github.com/Abhirawat623/VTravel/assets/131130116/dfe398b0-d270-46eb-900b-32bf74e2c6c0)
+
+
+![2](https://github.com/Abhirawat623/VTravel/assets/131130116/73398a40-3df9-4735-bbd5-09101fe25c2d)
+
+
+![6](https://github.com/Abhirawat623/VTravel/assets/131130116/18fd3c2b-c42d-4b82-b106-4aea5fe0b218)
+
+
+![5](https://github.com/Abhirawat623/VTravel/assets/131130116/414845d8-9e1c-42ec-ac79-678f9ea733c4)
+
+
+![7](https://github.com/Abhirawat623/VTravel/assets/131130116/9ea1189e-c242-41bd-952a-a8508fce2c0e)
+
+
+![8](https://github.com/Abhirawat623/VTravel/assets/131130116/a56bfe9b-49e1-4068-90d2-9999388ae683)
+
+
+
+##  APP Video
+
+
+
+
