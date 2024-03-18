@@ -20,7 +20,7 @@ V Travel App suggests you the best stays and enjoy your trip with range of best 
 - Database handled in MongoDB
 - React Context and Reducer
 - InfiniteScroll
-- Carousel dor categories
+- Carousel for categories
 - Dropdown List and Modal
 
 ## Login
