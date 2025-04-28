@@ -11,7 +11,7 @@ export const ResultPage = ({ items }) => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://aware-foal-lingerie.cyclic.app/api/hotels?category=${hotelCategory}`
+          `https://nomad-nest-gp25.vercel.app/api/hotels?category=${hotelCategory}`
         );
         setHotels(data);
       } catch (err) {
