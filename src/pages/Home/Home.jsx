@@ -45,7 +45,7 @@ export const Home = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://aware-foal-lingerie.cyclic.app/api/hotels?category=${hotelCategory}`
+          `https://nomad-nest-gp25.vercel.app/api/hotels?category=${hotelCategory}`
         );
         setTestData(data);
         console.log(hotels);
