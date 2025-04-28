@@ -22,7 +22,7 @@ export const Categories = () => {
     (async () => {
       try {
         const { data } = await axios.get(
-          "https://aware-foal-lingerie.cyclic.app/api/categories"
+          "https://nomad-nest-gp25.vercel.app/api/category"
         );
         // const categoriesToShow = data.slice(
         //   numberOfCategories + 8 > data.length
